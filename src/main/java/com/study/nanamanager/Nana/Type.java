@@ -15,7 +15,7 @@ import lombok.Getter;
 
 @Getter
 @AllArgsConstructor
-public enum NanaType {
+public enum Type {
     
     GUARANA("Guaraná Antártica"),
     NO_SUGAR("Guaraná Antártica 0 Açucar"),
