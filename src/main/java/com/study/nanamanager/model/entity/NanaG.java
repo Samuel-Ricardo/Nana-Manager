@@ -1,5 +1,6 @@
 package com.study.nanamanager.model.entity;
 
+import com.study.nanamanager.Nana.NanaType;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -45,6 +46,9 @@ public class NanaG {
     
     @Column(nullable = false)
     private String Ingredients;
+    
+    @Column (nullable = false)
+    private Long max;
     
     @Column(nullable = false)
     private Long stock;
