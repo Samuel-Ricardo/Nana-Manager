@@ -5,17 +5,21 @@
  */
 package com.study.nanamanager.Nana;
 
+import lombok.Data;
+
 /**
  *
  * @author Samuel
  */
+
+@Data
 public class NanaType {
 
     private Type nanaType;
     private Nutrients baseNutrients;
     private String ingredients;
 
-    private NanaType(Type type) {
+    private NanaType(Type type, NanaPacking packing) {
 
         nanaType = type;
 
@@ -28,7 +32,9 @@ public class NanaType {
                         + "\n"
                         + "\n"
                         + "Não contém glúten.";
-                baseNutrients = new Nutrients();
+                
+                baseNutrients = new Nutrients(
+                        0,1, 0, 0, 0);
                 break;
         }
     }

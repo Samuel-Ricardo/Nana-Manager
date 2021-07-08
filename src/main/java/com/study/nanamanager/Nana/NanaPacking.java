@@ -15,6 +15,6 @@ import lombok.Setter;
 public class NanaPacking {
     
     private String pack;
-    private String ml;
+    private int ml;
     
 }

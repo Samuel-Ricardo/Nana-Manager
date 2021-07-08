@@ -5,11 +5,29 @@
  */
 package com.study.nanamanager.Nana;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
 /**
  *
  * @author Samuel
  */
+
+@Data
+@AllArgsConstructor
 public class Nutrients {
     
-
+    private double carbohydrates;
+    private double calories;
+    private double sugars;
+    private double sodium;
+    
+    public Nutrients (NanaType nanaType, NanaPacking packing) {
+        
+       calories = nanaType.getBaseNutrients().calories * packing.getMl();
+       carbohydrates = nanaType.getBaseNutrients().carbohydrates * packing.getMl();
+       sugars = nanaType.getBaseNutrients().sugars * packing.getMl();
+       sodium = nanaType.getBaseNutrients().sodium * packing.getMl();
+       
+    }
 }

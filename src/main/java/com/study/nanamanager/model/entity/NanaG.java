@@ -1,6 +1,7 @@
 package com.study.nanamanager.model.entity;
 
 import com.study.nanamanager.Nana.NanaPacking;
+import com.study.nanamanager.Nana.Nutrients;
 import com.study.nanamanager.Nana.Type;
 import java.util.List;
 import javax.persistence.Column;
