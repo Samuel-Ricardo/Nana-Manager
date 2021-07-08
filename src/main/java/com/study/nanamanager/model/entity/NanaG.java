@@ -1,6 +1,7 @@
 package com.study.nanamanager.model.entity;
 
-import com.study.nanamanager.Nana.NanaType;
+import com.study.nanamanager.Nana.NanaPacking;
+import com.study.nanamanager.Nana.Type;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,16 +37,13 @@ public class NanaG {
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private NanaType type;
+    private Type type;
     
     @Column(nullable = false)
     private NanaPacking packing;
     
     @Column(nullable = false)
     private Nutrients nutrients;
-    
-    @Column(nullable = false)
-    private String Ingredients;
     
     @Column (nullable = false)
     private Long max;
