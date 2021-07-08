@@ -21,13 +21,15 @@ public class Nutrients {
     private double calories;
     private double sugars;
     private double sodium;
+    private String ingredients;
     
-    public Nutrients (NanaType nanaType, NanaPacking packing) {
+    public Nutrients (NanaType nanaType, NanaPacking packing, String ingredients) {
         
        calories = nanaType.getBaseNutrients().calories * packing.getMl();
        carbohydrates = nanaType.getBaseNutrients().carbohydrates * packing.getMl();
        sugars = nanaType.getBaseNutrients().sugars * packing.getMl();
        sodium = nanaType.getBaseNutrients().sodium * packing.getMl();
        
+       ingredients = ingredients;
     }
 }

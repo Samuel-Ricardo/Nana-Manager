@@ -18,7 +18,6 @@ public class NanaType {
 
     private Type nanaType;
     private Nutrients baseNutrients;
-    private String ingredients;
 
     private NanaType(Type type) {
 
@@ -28,41 +27,39 @@ public class NanaType {
 
             case GUARANA:
 
-                ingredients = "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo.\n"
-                        + "\n"
-                        + "Não contém glúten.";
-
                 baseNutrients = new Nutrients(
                         0.1,
                         0.415,
                         0.1,
-                        0.055);
+                        0.055,
+                        "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo.\n"
+                        + "\n"
+                        + "Não contém glúten."
+                );
                 break;
 
             case NO_SUGAR:
-
-                ingredients = "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo IV.\n"
-                        + "\n"
-                        + "Não contém glúten.";
 
                 baseNutrients = new Nutrients(
                         0,
                         0,
                         0,
-                        0.15);
+                        0.15,
+                        "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo IV.\n"
+                        + "\n"
+                        + "Não contém glúten.");
                 break;
 
             case NATU:
-
-                ingredients = "Água gaseificada, suco concentrado de pera clarificado, suco concentrado de maçã clarificado, suco concentrado de limão clarificado, concentrado de maçã, cenoura e hibisco, extrato de guaraná, aromas naturais e edulcorantes e glicosídeos de esteviol (13,5 mg/100ml).\n"
-                        + "\n"
-                        + "Não contém glúten.";
 
                 baseNutrients = new Nutrients(
                         0.415,
                         0.19,
                         0,
-                        0);
+                        0,
+                        "Água gaseificada, suco concentrado de pera clarificado, suco concentrado de maçã clarificado, suco concentrado de limão clarificado, concentrado de maçã, cenoura e hibisco, extrato de guaraná, aromas naturais e edulcorantes e glicosídeos de esteviol (13,5 mg/100ml).\n"
+                        + "\n"
+                        + "Não contém glúten.");
                 break;
         }
     }
