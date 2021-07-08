@@ -1,7 +1,9 @@
 package com.study.nanamanager.model.entity;
 
 import com.study.nanamanager.Nana.NanaPacking;
+import com.study.nanamanager.Nana.NanaType;
 import com.study.nanamanager.Nana.Nutrients;
+import com.study.nanamanager.Nana.Store;
 import com.study.nanamanager.Nana.Type;
 import java.util.List;
 import javax.persistence.Column;
@@ -38,7 +40,7 @@ public class NanaG {
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Type type;
+    private NanaType nanaType;
     
     @Column(nullable = false)
     private NanaPacking packing;
