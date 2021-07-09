@@ -5,10 +5,22 @@
  */
 package com.study.nanamanager.dto.mapper;
 
+import com.study.nanamanager.dto.request.NanaDTO;
+import com.study.nanamanager.model.entity.NanaG;
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
+
 /**
  *
  * @author Samuel
  */
-public class NanaMapper {
+
+@Mapper
+public interface NanaMapper {
     
+    NanaMapper INSTANCE = Mappers.getMapper(NanaMapper.class);
+
+    NanaG toModel(NanaDTO dto);
+    
+    NanaDTO toDTO(NanaG entity);
 }
