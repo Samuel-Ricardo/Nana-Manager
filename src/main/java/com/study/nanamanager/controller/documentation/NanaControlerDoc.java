@@ -7,6 +7,7 @@ package com.study.nanamanager.controller.documentation;
 
 import com.study.nanamanager.dto.request.NanaDTO;
 import com.study.nanamanager.dto.response.Response;
+import com.study.nanamanager.exceptions.NanaAlreadyRegisteredException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -25,5 +26,5 @@ public interface NanaControlerDoc {
         @ApiResponse(code = 200, message = "Nana Created"),
         @ApiResponse(code = 404, message = "Erro at Create")
     })
-    Response<NanaDTO, Exception> createNana(NanaDTO nanaDTO);
+    Response<NanaDTO, NanaAlreadyRegisteredException> createNana(NanaDTO nanaDTO);
 }
