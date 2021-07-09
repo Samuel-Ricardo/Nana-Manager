@@ -13,8 +13,8 @@ import lombok.Getter;
  * @author Samuel
  */
 
-@Getter
-@AllArgsConstructor
+//@Getter
+//@AllArgsConstructor
 public enum Type {
     
     GUARANA("Guaraná Antártica"),
@@ -23,4 +23,24 @@ public enum Type {
     
     
     private final String type;
+
+    private Type(String type) {
+        this.type = type;
+    }
+
+    public static Type getGUARANA() {
+        return GUARANA;
+    }
+
+    public static Type getNO_SUGAR() {
+        return NO_SUGAR;
+    }
+
+    public static Type getNATU() {
+        return NATU;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

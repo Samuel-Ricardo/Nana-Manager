@@ -30,11 +30,17 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/nana-manager")
 //@RequestMapping("/api/v1/nana")
-@AllArgsConstructor()
+//@AllArgsConstructor()
  
 public class NanaController implements NanaControllerDoc{
 
     private final NanaService nanaService;
+
+    
+    public NanaController(NanaService nanaService) {
+        this.nanaService = nanaService;
+    }
+    
     
     @Override
     @PostMapping

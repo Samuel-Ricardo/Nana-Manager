@@ -35,6 +35,7 @@ public class Nutrients {
        this.ingredients = ingredients;
     }
 
+    @Autowired
     public Nutrients(double carbohydrates, double calories, double sugars, double sodium, String ingredients) {
         this.carbohydrates = carbohydrates;
         this.calories = calories;
