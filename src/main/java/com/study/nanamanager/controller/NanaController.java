@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/nana-manager")
 //@RequestMapping("/api/v1/nana")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@AllArgsConstructor(onConstructor = @_(@Autowired))
 public class NanaController implements NanaControllerDoc{
 
     private final NanaService nanaService;
@@ -38,23 +38,23 @@ public class NanaController implements NanaControllerDoc{
     @Override
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Response<NanaDTO, NanaAlreadyRegisteredException> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
+    public Response<NanaDTO> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
     
         return nanaService.createNana(nanaDTO);
     }
 
     @Override
-    public Response<NanaDTO, NanaNotFoundException> findByName(String name) throws NanaNotFoundException {
+    public Response<NanaDTO> findByName(String name) throws NanaNotFoundException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Response<NanaDTO, Exception>> listBeers() {
+    public List<Response<NanaDTO>> listBeers() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Response<NanaDTO, NanaNotFoundException> deleteById(Long id) throws NanaNotFoundException {
+    public Response<NanaDTO> deleteById(Long id) throws NanaNotFoundException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
