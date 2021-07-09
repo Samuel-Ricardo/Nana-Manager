@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.http.HttpStatus;
 
 /**
  *
@@ -16,5 +17,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Response<Data> {
     
-    
+    private Data data;
+    private String message;
+    private HttpStatus status;
 }
