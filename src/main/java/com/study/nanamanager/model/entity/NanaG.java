@@ -40,6 +40,9 @@ public class NanaG {
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
+    private Type type;
+    
+    @Column(nullable = false)
     private NanaType nanaType;
     
     @Column(nullable = false)
@@ -47,9 +50,6 @@ public class NanaG {
     
     @Column(nullable = false)
     private Nutrients nutrients;
-    
-    @Column (nullable = false)
-    private Long max;
     
     @Column(nullable = false)
     private Long stock;

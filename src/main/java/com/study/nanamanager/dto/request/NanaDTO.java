@@ -4,6 +4,7 @@ import com.study.nanamanager.Nana.NanaPacking;
 import com.study.nanamanager.Nana.NanaType;
 import com.study.nanamanager.Nana.Nutrients;
 import com.study.nanamanager.Nana.Store;
+import com.study.nanamanager.Nana.Type;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.EnumType;
@@ -34,6 +35,9 @@ public class NanaDTO {
     
     @Enumerated(EnumType.STRING)
     @NotNull
+    private Type type;
+    
+    @NotNull
     private NanaType nanaType;
     
     @NotNull
@@ -41,9 +45,6 @@ public class NanaDTO {
     
     @NotNull
     private Nutrients nutrients;
-    
-    @Column (nullable = false)
-    private Long max;
     
     @NotNull
     private Long stock;
