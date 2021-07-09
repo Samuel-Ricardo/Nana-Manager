@@ -5,10 +5,25 @@
  */
 package com.study.nanamanager.controller.documentation;
 
+import com.study.nanamanager.dto.request.NanaDTO;
+import com.study.nanamanager.dto.response.Response;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 /**
  *
  * @author Samuel
  */
-public class NanaControlerDoc {
+
+@Api
+public interface NanaControlerDoc {
     
+    @ApiOperation(value = "Nana Creation Operation")
+    @ApiResponses(value = {
+        @ApiResponse(code = 200, message = "Nana Created"),
+        @ApiResponse(code = 404, message = "Erro at Create")
+    })
+    Response<NanaDTO> createNana(NanaDTO nanaDTO);
 }
