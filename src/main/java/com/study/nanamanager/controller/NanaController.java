@@ -6,14 +6,20 @@
 package com.study.nanamanager.controller;
 
 import com.study.nanamanager.controller.documentation.NanaControllerDoc;
+import com.study.nanamanager.dao.service.NanaService;
 import com.study.nanamanager.dto.request.NanaDTO;
 import com.study.nanamanager.dto.response.Response;
 import com.study.nanamanager.exceptions.NanaAlreadyRegisteredException;
 import com.study.nanamanager.exceptions.NanaNotFoundException;
 import java.util.List;
+import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -27,9 +33,14 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class NanaController implements NanaControllerDoc{
 
+    private final NanaService nanaService;
+    
     @Override
-    public Response<NanaDTO, NanaAlreadyRegisteredException> createNana(NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Response<NanaDTO, NanaAlreadyRegisteredException> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
+    
+        return nanaService.createNana(nanaDTO);
     }
 
     @Override
