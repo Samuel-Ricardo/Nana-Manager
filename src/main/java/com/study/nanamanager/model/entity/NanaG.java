@@ -69,6 +69,20 @@ public class NanaG {
         return name;
     }
 
+    public NanaG(Long id, String name, Type type, NanaType nanaType, NanaPacking packing, Nutrients nutrients, Long stock, List<Store> stores) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.nanaType = nanaType;
+        this.packing = packing;
+        this.nutrients = nutrients;
+        this.stock = stock;
+        this.stores = stores;
+    }
+
+    public NanaG() {
+    }
+    
     public void setName(String name) {
         this.name = name;
     }
