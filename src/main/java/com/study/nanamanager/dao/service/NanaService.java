@@ -18,11 +18,17 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-@AllArgsConstructor()
+//@AllArgsConstructor()
 public class NanaService {
     
     private final NanaRepository nanaRepository;
     private final NanaMapper nanaMapper = NanaMapper.INSTANCE;
+
+    public NanaService(NanaRepository nanaRepository) {
+        this.nanaRepository = nanaRepository;
+    }
+    
+    
     
     public Response<NanaDTO> createNana(NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
     
@@ -51,5 +57,13 @@ public class NanaService {
         Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
         
         return optSavedNana;
+    }
+
+    public NanaRepository getNanaRepository() {
+        return nanaRepository;
+    }
+
+    public NanaMapper getNanaMapper() {
+        return nanaMapper;
     }
 }
