@@ -39,5 +39,10 @@ public class NanaService {
         
         return optSavedNana.isPresent();
     }
-
+    
+    private Optional<NanaG> getNana(String name) {
+        Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
+        
+        return optSavedNana;
+    }
 }
