@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author Samuel
  */
 @Api
-public interface NanaControlerDoc {
+public interface NanaControllerDoc {
 
     @ApiOperation(value = "Nana Creation Operation")
     @ApiResponses(value = {
