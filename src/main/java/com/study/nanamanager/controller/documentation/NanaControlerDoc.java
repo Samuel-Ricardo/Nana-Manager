@@ -25,5 +25,5 @@ public interface NanaControlerDoc {
         @ApiResponse(code = 200, message = "Nana Created"),
         @ApiResponse(code = 404, message = "Erro at Create")
     })
-    Response<NanaDTO> createNana(NanaDTO nanaDTO);
+    Response<NanaDTO, Exception> createNana(NanaDTO nanaDTO);
 }
