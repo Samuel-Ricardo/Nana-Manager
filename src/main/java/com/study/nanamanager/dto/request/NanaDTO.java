@@ -21,10 +21,10 @@ import lombok.NoArgsConstructor;
  * @author Samuel
  */
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+//@Data
+//@Builder
+//@NoArgsConstructor
+//@AllArgsConstructor
 public class NanaDTO {
     
     private Long id;
@@ -51,4 +51,20 @@ public class NanaDTO {
     
     @NotNull
     private List<Store> stores;
+
+    public NanaDTO(Long id, String name, Type type, NanaType nanaType, NanaPacking packing, Nutrients nutrients, Long stock, List<Store> stores) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.nanaType = nanaType;
+        this.packing = packing;
+        this.nutrients = nutrients;
+        this.stock = stock;
+        this.stores = stores;
+    }
+
+    public NanaDTO() {
+    }
+    
+    
 }
