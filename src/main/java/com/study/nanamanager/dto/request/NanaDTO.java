@@ -67,4 +67,70 @@ public class NanaDTO {
     }
     
     
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public NanaType getNanaType() {
+        return nanaType;
+    }
+
+    public void setNanaType(NanaType nanaType) {
+        this.nanaType = nanaType;
+    }
+
+    public NanaPacking getPacking() {
+        return packing;
+    }
+
+    public void setPacking(NanaPacking packing) {
+        this.packing = packing;
+    }
+
+    public Nutrients getNutrients() {
+        return nutrients;
+    }
+
+    public void setNutrients(Nutrients nutrients) {
+        this.nutrients = nutrients;
+    }
+
+    public Long getStock() {
+        return stock;
+    }
+
+    public void setStock(Long stock) {
+        this.stock = stock;
+    }
+
+    public List<Store> getStores() {
+        return stores;
+    }
+
+    public void setStores(List<Store> stores) {
+        this.stores = stores;
+    }
+    
+    
 }
