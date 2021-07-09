@@ -16,10 +16,10 @@ import org.springframework.http.HttpStatus;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Response<Data, Error> {
+public class Response<Data, ErrorType> {
     
     private Data data;
-    private Optional<Error> error;
+    private Optional<ErrorType> error;
     private String message;
     private HttpStatus status;
 }
