@@ -12,13 +12,21 @@ import org.springframework.http.HttpStatus;
  * @param <Data>
  */
 
-@Getter
-@Setter
-@AllArgsConstructor
+//@Getter
+//@Setter
+//@AllArgsConstructor
 public class Response<Data> {
     
     private Data data;
 //    private Optional<ErrorType> error;
     private String message;
     private HttpStatus status;
+
+    public Response(Data data, String message, HttpStatus status) {
+        this.data = data;
+        this.message = message;
+        this.status = status;
+    }
+    
+    
 }
