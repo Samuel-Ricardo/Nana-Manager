@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-@AllArgsConstructor(onConstructor = @_(@Autowired))
+@AllArgsConstructor()
 public class NanaService {
     
     private final NanaRepository nanaRepository;

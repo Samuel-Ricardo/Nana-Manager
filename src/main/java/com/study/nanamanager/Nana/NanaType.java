@@ -63,4 +63,9 @@ public class NanaType {
                 break;
         }
     }
+
+    public Nutrients getBaseNutrients() {
+        
+        return baseNutrients;
+    }
 }

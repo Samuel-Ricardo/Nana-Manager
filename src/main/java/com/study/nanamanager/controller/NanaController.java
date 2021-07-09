@@ -30,7 +30,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/v1/nana-manager")
 //@RequestMapping("/api/v1/nana")
-@AllArgsConstructor(onConstructor = @_(@Autowired))
+@AllArgsConstructor()
+ 
 public class NanaController implements NanaControllerDoc{
 
     private final NanaService nanaService;
