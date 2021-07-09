@@ -12,8 +12,8 @@ import lombok.Data;
  *
  * @author Samuel
  */
-@Data
-@AllArgsConstructor
+//@Data
+//@AllArgsConstructor
 public class NanaType {
 
     private Type nanaType;
@@ -64,8 +64,23 @@ public class NanaType {
         }
     }
 
+
+    
+
     public Nutrients getBaseNutrients() {
         
         return baseNutrients;
+    }
+
+    public Type getNanaType() {
+        return nanaType;
+    }
+
+    public void setNanaType(Type nanaType) {
+        this.nanaType = nanaType;
+    }
+
+    public void setBaseNutrients(Nutrients baseNutrients) {
+        this.baseNutrients = baseNutrients;
     }
 }
