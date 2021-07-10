@@ -42,7 +42,7 @@ public class NanaController implements NanaControllerDoc{
     
     
 //    @Override
-    @PostMapping
+    @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Response<NanaDTO> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
     
