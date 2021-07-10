@@ -50,68 +50,65 @@ public class NanaService {
     public Response<NanaDTO> findByName(String name) throws NanaNotFoundException {
         NanaG foundNana = nanaRepository.findByName(name)
                 .orElseThrow(() -> new NanaNotFoundException(name));
-        
+
         return new Response<NanaDTO>(
-                nanaMapper.toDTO(foundNana), 
-                "Nana Found With Success", 
+                nanaMapper.toDTO(foundNana),
+                "Nana Found With Success",
                 HttpStatus.FOUND);
     }
-    
+
     public List<Response<NanaDTO>> listAll() {
-    
+
         return nanaRepository.findAll()
                 .stream()
                 .map((entity) -> {
                     return new Response<NanaDTO>(
-                            nanaMapper.toDTO(entity), 
-                            "The: "+entity.getName()+" Found :)", 
+                            nanaMapper.toDTO(entity),
+                            "The: " + entity.getName() + " Found :)",
                             HttpStatus.FOUND);
                 })
                 .collect(Collectors.toList());
     }
-    
+
     public Response<NanaDTO> deleteById(Long id) throws NanaNotFoundException {
-        
+
         NanaG nana = getNana(id).orElseThrow(() -> {
             return new NanaNotFoundException(id); //To change body of generated lambdas, choose Tools | Templates.
         });
-        
+
         nanaRepository.delete(nana);
-        
-        return new Response<NanaDTO> (
-                nanaMapper.toDTO(nana)
-                , "The Nana "+nana.getName()+" with id: "+nana.getId()+" has been deleted", 
+
+        return new Response<NanaDTO>(
+                nanaMapper.toDTO(nana),
+                 "The Nana " + nana.getName() + " with id: " + nana.getId() + " has been deleted",
                 HttpStatus.OK
         );
     }
-    
+
     public Response<NanaDTO> update(Long id, NanaDTO newNana) throws NanaNotFoundException {
-    
+
         NanaG nana = getNana(id)
                 .orElseThrow(() -> new NanaNotFoundException(id));
-        
+
         NanaG savedNana = nanaRepository.save(nana);
-        
-        return new Response<NanaDTO> (
-                nanaMapper.toDTO(nana)
-                , "The Nana "+nana.getName()+" with id: "+nana.getId()+" has been updated", 
+
+        return new Response<NanaDTO>(
+                nanaMapper.toDTO(nana),
+                 "The Nana " + nana.getName() + " with id: " + nana.getId() + " has been updated",
                 HttpStatus.OK
         );
     }
 
     public Response<NanaDTO> updateStock(Long id, NanaDTO newNana) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
-    
-    
-    
 
     private boolean checkIfExistsNana(String name) {
         Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
 
         return optSavedNana.isPresent();
     }
-    
+
     private boolean checkIfExistsNana(Long id) {
         Optional<NanaG> optSavedNana = nanaRepository.findById(id);
 
@@ -123,7 +120,7 @@ public class NanaService {
 
         return optSavedNana;
     }
-    
+
     private Optional<NanaG> getNana(Long id) {
         Optional<NanaG> optSavedNana = nanaRepository.findById(id);
 
