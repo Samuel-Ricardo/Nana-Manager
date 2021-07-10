@@ -99,8 +99,20 @@ public class NanaService {
         );
     }
 
-    public Response<NanaDTO> updateStock(Long id, NanaDTO newNana) {
+    public Response<NanaDTO> updateStock(Long id, Long stock) throws NanaNotFoundException {
 
+        NanaG nana = getNana(id)
+                .orElseThrow(() -> new NanaNotFoundException(id));
+    
+        nana.setStock(stock);
+        
+        return new Response<NanaDTO>(
+                nanaMapper.toDTO(
+                        nanaRepository.save(nana)
+                ),
+                "The Stock of Nana " + nana.getName() + " with id: " + nana.getId() + " has been updated",
+                HttpStatus.OK
+        ); 
     }
 
     private boolean checkIfExistsNana(String name) {
