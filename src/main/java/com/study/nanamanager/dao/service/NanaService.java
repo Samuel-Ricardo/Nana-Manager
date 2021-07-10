@@ -69,15 +69,42 @@ public class NanaService {
                 })
                 .collect(Collectors.toList());
     }
+    
+    public Response<NanaDTO> deleteById(Long id) throws NanaNotFoundException {
+        
+        NanaG nana = getNana(id).orElseThrow(() -> {
+            return new NanaNotFoundException(id); //To change body of generated lambdas, choose Tools | Templates.
+        });
+        
+        nanaRepository.delete(nana);
+        
+        return new Response<NanaDTO> (
+                nanaMapper.toDTO(nana)
+                , "The Nana "+nana.getName()+" with id: "+nana.getId()+" has been deleted", 
+                HttpStatus.OK
+        );
+    }
 
     private boolean checkIfExistsNana(String name) {
         Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
 
         return optSavedNana.isPresent();
     }
+    
+    private boolean checkIfExistsNana(Long id) {
+        Optional<NanaG> optSavedNana = nanaRepository.findById(id);
+
+        return optSavedNana.isPresent();
+    }
 
     private Optional<NanaG> getNana(String name) {
         Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
+
+        return optSavedNana;
+    }
+    
+    private Optional<NanaG> getNana(Long id) {
+        Optional<NanaG> optSavedNana = nanaRepository.findById(id);
 
         return optSavedNana;
     }
