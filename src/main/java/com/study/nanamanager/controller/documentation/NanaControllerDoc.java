@@ -55,5 +55,5 @@ public interface NanaControllerDoc {
 
     Response<NanaDTO> update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
     
-    Response<NanaDTO> updateStock(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
+    Response<NanaDTO> updateStock(@PathVariable Long id, @RequestBody Long stock) throws NanaNotFoundException;
 }
