@@ -5,7 +5,10 @@
  */
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -19,12 +22,14 @@ import lombok.Data;
 @Embeddable
 public class NanaType {
 
-    private Type nanaType;
+    @Enumerated(EnumType.STRING)
+     @Column(name = "nana_type")
+    private Type type;
     private Nutrients baseNutrients;
 
     private NanaType(Type type) {
 
-        nanaType = type;
+        this.type = type;
 
         switch (type) {
 
@@ -75,12 +80,12 @@ public class NanaType {
         return baseNutrients;
     }
 
-    public Type getNanaType() {
-        return nanaType;
+    public Type getType() {
+        return type;
     }
 
-    public void setNanaType(Type nanaType) {
-        this.nanaType = nanaType;
+    public void setType(Type type) {
+        this.type = type;
     }
 
     public void setBaseNutrients(Nutrients baseNutrients) {

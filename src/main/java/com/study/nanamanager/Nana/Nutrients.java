@@ -5,6 +5,7 @@
  */
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,10 +21,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Embeddable
 public class Nutrients {
     
+//    @Column(name="bn_carb")
     private double carbohydrates;
+    
+//    @Column(name="bn_cal")
     private double calories;
+    
+//    @Column(name="bn_sugars")
     private double sugars;
+    
+//    @Column(name="bn_sodium")
     private double sodium;
+    
+//    @Column(name="bn_ingred")
     private String ingredients;
     
     @Autowired
