@@ -16,6 +16,8 @@ import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,24 +36,27 @@ import org.springframework.web.bind.annotation.RestController;
  
 public class NanaController implements NanaControllerDoc{
 
-    private final NanaService nanaService;
+    private final NanaService service;
 
     public NanaController(NanaService nanaService) {
-        this.nanaService = nanaService;
+        this.service = nanaService;
     }
     
     
-//    @Override
+    @Override
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Response<NanaDTO> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
     
-        return nanaService.createNana(nanaDTO);
+        return service.createNana(nanaDTO);
     }
 
     @Override
-    public Response<NanaDTO> findByName(String name) throws NanaNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @GetMapping("/{name}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public Response<NanaDTO> findByName(@PathVariable String name) throws NanaNotFoundException {
+    
+        return service.findByName(name);
     }
 
     @Override
