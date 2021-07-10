@@ -35,7 +35,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/nana-manager")
 //@RequestMapping("/api/v1/nana")
 //@AllArgsConstructor()
-
 public class NanaController implements NanaControllerDoc {
 
     private final NanaService service;
@@ -91,5 +90,4 @@ public class NanaController implements NanaControllerDoc {
     
         return service.updateStock(id, stock);
     }
-
 }

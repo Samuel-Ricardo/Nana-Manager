@@ -53,7 +53,17 @@ public interface NanaControllerDoc {
     })
     Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException;
 
+    @ApiOperation(value = "Update a nana found by a given valid Id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success nana update in the system"),
+            @ApiResponse(code = 404, message = "Nana with given id not found.")
+    })
     Response<NanaDTO> update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
     
+    @ApiOperation(value = "Update a nana stock found by a given valid Id")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Success nana stock update in the system"),
+            @ApiResponse(code = 404, message = "Nana with given id not found.")
+    })
     Response<NanaDTO> updateStock(@PathVariable Long id, @RequestBody Long stock) throws NanaNotFoundException;
 }
