@@ -1,5 +1,6 @@
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import lombok.Setter;
 //@Getter
 //@Setter
 //@AllArgsConstructor
+@Embeddable
 public class NanaPacking {
     
     private String pack;

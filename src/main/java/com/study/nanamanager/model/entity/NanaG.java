@@ -7,6 +7,7 @@ import com.study.nanamanager.Nana.Store;
 import com.study.nanamanager.Nana.Type;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -42,21 +43,26 @@ public class NanaG {
     @Column(nullable = false)
     private Type type;
     
+    @ElementCollection
     @Column(nullable = false)
     private NanaType nanaType;
     
+    @ElementCollection
     @Column(nullable = false)
     private NanaPacking packing;
     
+    @ElementCollection
     @Column(nullable = false)
     private Nutrients nutrients;
     
     @Column(nullable = false)
     private Long stock;
     
+    @ElementCollection
     @Column(nullable = false)
     private List<Store> stores;
 
+    
     public Long getId() {
         return id;
     }

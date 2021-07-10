@@ -5,6 +5,7 @@
  */
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -14,6 +15,8 @@ import lombok.Data;
  */
 //@Data
 //@AllArgsConstructor
+
+@Embeddable
 public class NanaType {
 
     private Type nanaType;

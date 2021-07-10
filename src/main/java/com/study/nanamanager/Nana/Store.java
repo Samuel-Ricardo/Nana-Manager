@@ -5,6 +5,7 @@
  */
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -13,10 +14,34 @@ import lombok.Data;
  * @author Samuel
  */
 
-@Data
-@AllArgsConstructor
+//@Data
+//@AllArgsConstructor
+@Embeddable
 public class Store {
     
     private String name;
     private double price;
+
+    public Store(String name, double price) {
+        this.name = name;
+        this.price = price;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+    
+    
 }

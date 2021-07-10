@@ -5,6 +5,7 @@
  */
 package com.study.nanamanager.Nana;
 
+import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 //@Data
 //@AllArgsConstructor
+@Embeddable
 public class Nutrients {
     
     private double carbohydrates;
