@@ -66,13 +66,13 @@ public class NanaController implements NanaControllerDoc {
         return service.listAll();
     }
 
-//    @Override
-//    @DeleteMapping("/{id}/delete")
-//    public Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException {
-//
-//        return service.deleteById(id);
-//    }
-//
+    @Override
+    @DeleteMapping("/{id}/delete")
+    public Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException {
+
+        return service.deleteById(id);
+    }
+
 //    @Override
 //    public NanaDTO update(Long id, NanaDTO newNana) throws NanaNotFoundException {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
