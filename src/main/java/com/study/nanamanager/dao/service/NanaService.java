@@ -84,6 +84,27 @@ public class NanaService {
                 HttpStatus.OK
         );
     }
+    
+    public Response<NanaDTO> update(Long id, NanaDTO newNana) throws NanaNotFoundException {
+    
+        NanaG nana = getNana(id)
+                .orElseThrow(() -> new NanaNotFoundException(id));
+        
+        NanaG savedNana = nanaRepository.save(nana);
+        
+        return new Response<NanaDTO> (
+                nanaMapper.toDTO(nana)
+                , "The Nana "+nana.getName()+" with id: "+nana.getId()+" has been updated", 
+                HttpStatus.OK
+        );
+    }
+
+    public Response<NanaDTO> updateStock(Long id, NanaDTO newNana) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    
+    
 
     private boolean checkIfExistsNana(String name) {
         Optional<NanaG> optSavedNana = nanaRepository.findByName(name);
@@ -115,13 +136,5 @@ public class NanaService {
 
     public NanaMapper getNanaMapper() {
         return nanaMapper;
-    }
-
-    public Response<NanaDTO> update(Long id, NanaDTO newNana) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Response<NanaDTO> updateStock(Long id, NanaDTO newNana) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
