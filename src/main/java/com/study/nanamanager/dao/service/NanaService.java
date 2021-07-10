@@ -7,7 +7,9 @@ import com.study.nanamanager.dto.response.Response;
 import com.study.nanamanager.exceptions.NanaAlreadyRegisteredException;
 import com.study.nanamanager.exceptions.NanaNotFoundException;
 import com.study.nanamanager.model.entity.NanaG;
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -53,6 +55,19 @@ public class NanaService {
                 nanaMapper.toDTO(foundNana), 
                 "Nana Found With Success", 
                 HttpStatus.FOUND);
+    }
+    
+    public List<Response<NanaDTO>> listAll() {
+    
+        return nanaRepository.findAll()
+                .stream()
+                .map((entity) -> {
+                    return new Response<NanaDTO>(
+                            nanaMapper.toDTO(entity), 
+                            "The: "+entity.getName()+" Found :)", 
+                            HttpStatus.FOUND);
+                })
+                .collect(Collectors.toList());
     }
 
     private boolean checkIfExistsNana(String name) {
