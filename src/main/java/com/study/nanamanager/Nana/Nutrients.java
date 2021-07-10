@@ -56,6 +56,9 @@ public class Nutrients {
         this.ingredients = ingredients;
     }
 
+    public Nutrients() {
+    }
+
     public double getCarbohydrates() {
         return carbohydrates;
     }

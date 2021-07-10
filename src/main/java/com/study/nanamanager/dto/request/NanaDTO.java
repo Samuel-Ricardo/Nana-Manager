@@ -43,8 +43,8 @@ public class NanaDTO {
     @NotNull
     private NanaPacking packing;
     
-    @NotNull
-    private Nutrients nutrients;
+//    @NotNull
+//    private Nutrients nutrients;
     
     @NotNull
     private Long stock;
@@ -52,13 +52,13 @@ public class NanaDTO {
     @NotNull
     private List<Store> stores;
 
-    public NanaDTO(Long id, String name, Type type, NanaType nanaType, NanaPacking packing, Nutrients nutrients, Long stock, List<Store> stores) {
+    public NanaDTO(Long id, String name, Type type, NanaType nanaType, NanaPacking packing /*, Nutrients nutrients*/, Long stock, List<Store> stores) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.nanaType = nanaType;
         this.packing = packing;
-        this.nutrients = nutrients;
+//        this.nutrients = nutrients;
         this.stock = stock;
         this.stores = stores;
     }
@@ -108,13 +108,15 @@ public class NanaDTO {
         this.packing = packing;
     }
 
-    public Nutrients getNutrients() {
-        return nutrients;
-    }
-
-    public void setNutrients(Nutrients nutrients) {
-        this.nutrients = nutrients;
-    }
+//    public void
+    
+//    public Nutrients getNutrients() {
+//        return nutrients;
+//    }
+//
+//    public void setNutrients(Nutrients nutrients) {
+//        this.nutrients = nutrients;
+//    }
 
     public Long getStock() {
         return stock;

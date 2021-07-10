@@ -24,6 +24,11 @@ public class NanaPacking {
         this.ml = ml;
     }
 
+    public NanaPacking() {
+    }
+
+    
+    
     public String getPack() {
         return pack;
     }

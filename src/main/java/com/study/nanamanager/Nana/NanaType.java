@@ -27,11 +27,11 @@ public class NanaType {
     private Type type;
     private Nutrients baseNutrients;
 
-    private NanaType(Type type) {
+    public NanaType(String type) {
 
-        this.type = type;
+        this.type = Type.valueOf(type);
 
-        switch (type) {
+        switch (this.type) {
 
             case GUARANA:
 
@@ -72,7 +72,11 @@ public class NanaType {
         }
     }
 
+    public NanaType() {
+    }
 
+
+    
     
 
     public Nutrients getBaseNutrients() {

@@ -36,7 +36,6 @@ public class NanaController implements NanaControllerDoc{
 
     private final NanaService nanaService;
 
-    
     public NanaController(NanaService nanaService) {
         this.nanaService = nanaService;
     }
