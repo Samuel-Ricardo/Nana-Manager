@@ -15,6 +15,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import java.util.List;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 
 /**
  *
@@ -43,7 +44,7 @@ public interface NanaControllerDoc {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "List of all nana registered in the system"),
     })
-    List<Response<NanaDTO>> listBeers();
+    List<Response<NanaDTO>> listNanas();
 
     @ApiOperation(value = "Delete a nana found by a given valid Id")
     @ApiResponses(value = {
@@ -51,4 +52,6 @@ public interface NanaControllerDoc {
             @ApiResponse(code = 404, message = "Nana with given id not found.")
     })
     Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException;
+
+    NanaDTO update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
 }

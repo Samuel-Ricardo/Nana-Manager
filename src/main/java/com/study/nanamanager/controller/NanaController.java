@@ -16,6 +16,7 @@ import javax.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,26 +29,24 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Samuel
  */
-
 @RestController
 @RequestMapping("/api/v1/nana-manager")
 //@RequestMapping("/api/v1/nana")
 //@AllArgsConstructor()
- 
-public class NanaController implements NanaControllerDoc{
+
+public class NanaController implements NanaControllerDoc {
 
     private final NanaService service;
 
     public NanaController(NanaService nanaService) {
         this.service = nanaService;
     }
-    
-    
+
     @Override
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
     public Response<NanaDTO> createNana(@RequestBody @Valid NanaDTO nanaDTO) throws NanaAlreadyRegisteredException {
-    
+
         return service.createNana(nanaDTO);
     }
 
@@ -55,18 +54,28 @@ public class NanaController implements NanaControllerDoc{
     @GetMapping("/{name}")
     @ResponseStatus(HttpStatus.FOUND)
     public Response<NanaDTO> findByName(@PathVariable String name) throws NanaNotFoundException {
-    
+
         return service.findByName(name);
     }
 
     @Override
-    public List<Response<NanaDTO>> listBeers() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @GetMapping("/list-all")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<Response<NanaDTO>> listNanas() {
+
+        return service.listAll();
     }
 
-    @Override
-    public Response<NanaDTO> deleteById(Long id) throws NanaNotFoundException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+//    @Override
+//    @DeleteMapping("/{id}/delete")
+//    public Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException {
+//
+//        return service.deleteById(id);
+//    }
+//
+//    @Override
+//    public NanaDTO update(Long id, NanaDTO newNana) throws NanaNotFoundException {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
 }
