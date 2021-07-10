@@ -116,4 +116,12 @@ public class NanaService {
     public NanaMapper getNanaMapper() {
         return nanaMapper;
     }
+
+    public Response<NanaDTO> update(Long id, NanaDTO newNana) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Response<NanaDTO> updateStock(Long id, NanaDTO newNana) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

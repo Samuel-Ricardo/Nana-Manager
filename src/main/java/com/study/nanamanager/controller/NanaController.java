@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -68,14 +69,18 @@ public class NanaController implements NanaControllerDoc {
 
     @Override
     @DeleteMapping("/{id}/delete")
+    @ResponseStatus(HttpStatus.OK)
     public Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException {
 
         return service.deleteById(id);
     }
 
-//    @Override
-//    public NanaDTO update(Long id, NanaDTO newNana) throws NanaNotFoundException {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+    @Override
+    @PutMapping("/{id}/update")
+    @ResponseStatus(HttpStatus.OK)
+    public Response<NanaDTO> update(Long id, NanaDTO newNana) throws NanaNotFoundException {
+
+        return service.update(id, newNana);
+    }
 
 }

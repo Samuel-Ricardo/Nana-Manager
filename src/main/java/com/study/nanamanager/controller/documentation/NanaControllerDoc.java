@@ -53,5 +53,7 @@ public interface NanaControllerDoc {
     })
     Response<NanaDTO> deleteById(@PathVariable Long id) throws NanaNotFoundException;
 
-    NanaDTO update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
+    Response<NanaDTO> update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
+    
+    Response<NanaDTO> updateStock(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException;
 }
