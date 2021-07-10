@@ -108,13 +108,9 @@ public class NanaDTO {
         this.packing = packing;
     }
 
-    public Nutrients getNutrient() {
+    public Nutrients getNutrients() {
         
-        return new Nutrients(
-                nanaType, 
-                packing,
-                nanaType.getBaseNutrients().getIngredients()
-        );
+        return new Nutrients(this);
     }
     
 //    public Nutrients getNutrients() {

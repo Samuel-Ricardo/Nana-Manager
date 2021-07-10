@@ -118,6 +118,11 @@ public class NanaG {
         this.packing = packing;
     }
 
+    public Nutrients getNutrients() {
+        
+        return new Nutrients(this);
+    }
+    
 //    public Nutrients getNutrients() {
 //        return nutrients;
 //    }
