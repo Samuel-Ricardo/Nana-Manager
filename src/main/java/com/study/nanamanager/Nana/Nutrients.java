@@ -6,6 +6,7 @@
 package com.study.nanamanager.Nana;
 
 import com.study.nanamanager.dto.request.NanaDTO;
+import com.study.nanamanager.model.entity.NanaG;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import lombok.AllArgsConstructor;
@@ -56,7 +57,18 @@ public class Nutrients {
        this.sugars = nana.getNanaType().getBaseNutrients().getSugars() * nana.getPacking().getMl();
        this.sodium = nana.getNanaType().getBaseNutrients().getSodium() * nana.getPacking().getMl();
        
-       this.ingredients = ingredients;
+       this.ingredients = nana.getNanaType().getBaseNutrients().getIngredients();
+    }
+    
+    @Autowired
+    public Nutrients (NanaG nana) {
+        
+       this.calories = nana.getNanaType().getBaseNutrients().getCalories() * nana.getPacking().getMl();
+       this.carbohydrates = nana.getNanaType().getBaseNutrients().getCarbohydrates() * nana.getPacking().getMl();
+       this.sugars = nana.getNanaType().getBaseNutrients().getSugars() * nana.getPacking().getMl();
+       this.sodium = nana.getNanaType().getBaseNutrients().getSodium() * nana.getPacking().getMl();
+       
+       this.ingredients = nana.getNanaType().getBaseNutrients().getIngredients();
     }
 
     @Autowired
