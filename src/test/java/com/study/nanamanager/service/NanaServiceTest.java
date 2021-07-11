@@ -45,6 +45,11 @@ public class NanaServiceTest {
         // given
         NanaDTO expectedNanaDTO = getDefaultDTO();
         NanaG expectedSavedNana = mapper.toModel(expectedNanaDTO);
-
+    
+        // when
+        when(repository.findByName(expectedNanaDTO.getName())).thenReturn(Optional.empty());
+        when(repository.save(expectedSavedNana)).thenReturn(expectedSavedNana);
+        
+        
     }
 }
