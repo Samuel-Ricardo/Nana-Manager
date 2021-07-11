@@ -69,14 +69,15 @@ public class NanaServiceTest {
         NanaG expectedSavedNana = mapper.toModel(expectedNanaDTO);
     
         // when
-        when(repository.findByName(expectedNanaDTO.getName())).thenReturn(Optional.empty());
-        when(repository.save(expectedSavedNana)).thenReturn(expectedSavedNana);
+        lenient().when(repository.findByName(expectedNanaDTO.getName())).thenReturn(Optional.empty());
+        lenient().when(repository.save(expectedSavedNana)).thenReturn(expectedSavedNana);
         
         //then
         Response<NanaDTO> createdNanaDTO = service.createNana(expectedNanaDTO);
+
     
         assertThat(createdNanaDTO.getData().getId(), is(equalTo(expectedNanaDTO.getId())));
-        assertThat(createdNanaDTO.getData().getName(), is(equalTo(expectedSavedNana.getName())));
-        assertThat(createdNanaDTO.getData().getStock(), is(equalTo(expectedSavedNana.getStock())));
+        assertThat(createdNanaDTO.getData().getName(), is(equalTo(expectedNanaDTO.getName())));
+        assertThat(createdNanaDTO.getData().getStock(), is(equalTo(expectedNanaDTO.getStock())));
     }
 }

@@ -34,7 +34,7 @@ public class NanaFactory {
                 id, 
                 "Guaraná Antártica Natu", 
                 Type.NATU, 
-                new NanaType(Type.NATU.getType()), 
+                new NanaType(Type.NATU.name()), 
                 new NanaPacking("Latinha", 260), 
                 stock,
                 stores

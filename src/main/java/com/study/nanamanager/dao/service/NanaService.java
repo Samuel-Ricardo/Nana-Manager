@@ -41,7 +41,7 @@ public class NanaService {
 
         NanaG nana = nanaMapper.toModel(nanaDTO);
         NanaG savedNana = nanaRepository.save(nana);
-        return new Response<NanaDTO>(
+        return new Response<>(
                 nanaMapper.toDTO(savedNana),
                 "Created With Success",
                 HttpStatus.CREATED);
