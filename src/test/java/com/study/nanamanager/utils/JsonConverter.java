@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  */
 public class JsonConverter {
     
-    public static String toJsonString(Object nanaDTO) {
+    public static String toJsonString(Object object) {
         
         try {
             ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +29,7 @@ public class JsonConverter {
             mapper.configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false);
             mapper.registerModule(new JavaTimeModule());
             
-            return mapper.writeValueAsString(nanaDTO);
+            return mapper.writeValueAsString(object);
         } catch (JsonProcessingException ex) {
             Logger.getLogger(JsonConverter.class.getName()).log(Level.SEVERE, null, ex);
         
