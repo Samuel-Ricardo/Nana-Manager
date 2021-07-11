@@ -9,7 +9,9 @@ import com.study.nanamanager.Nana.NanaPacking;
 import com.study.nanamanager.Nana.NanaType;
 import com.study.nanamanager.Nana.Store;
 import com.study.nanamanager.Nana.Type;
+import com.study.nanamanager.dto.mapper.NanaMapper;
 import com.study.nanamanager.dto.request.NanaDTO;
+import com.study.nanamanager.model.entity.NanaG;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,4 +41,10 @@ public class NanaFactory {
         ); 
     }
     
+    public static NanaG getDefaultEntity(){
+        
+        NanaMapper mapper = NanaMapper.INSTANCE;
+        
+        return mapper.toModel(NanaFactory.getDefaultDTO());
+    }
 }
