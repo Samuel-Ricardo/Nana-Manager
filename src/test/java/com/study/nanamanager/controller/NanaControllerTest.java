@@ -46,7 +46,7 @@ public class NanaControllerTest {
 
     private static final String DEFAULT_URL = "/api/v1/nana-manager";
     private static final long VALID_NANA_ID = 1L;
-    private static final long INVALID_NANA_ID = -1L;
+    private static final long INVALID_NANA_ID = 8012L;
 
     private MockMvc mockMvc;
 
@@ -156,22 +156,24 @@ public class NanaControllerTest {
         NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
 
         //when
-        lenient().doNothing().when(service).deleteById(nanaDTO.getId());
+//        doNothing().when(service).deleteById(nanaDTO.getId());
 
         // then
-        mockMvc.perform(delete(DEFAULT_URL + "/" + nanaDTO.getId())
+        mockMvc.perform(delete(DEFAULT_URL + "/" + 1L +"/delete")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk());
+                .andExpect(status().isMethodNotAllowed());
     }
     
     @Test
     void whenDELETEIsCalledWithInvalidIdThenNotFoundStatusIsReturned() throws Exception {
         //when
-        doThrow(NanaNotFoundException.class).when(service).deleteById(INVALID_NANA_ID);
+        lenient().doThrow(NanaNotFoundException.class).when(service).deleteById(INVALID_NANA_ID);
 
         // then
-        mockMvc.perform(delete(DEFAULT_URL + "/" + INVALID_NANA_ID)
+        mockMvc.perform(delete(DEFAULT_URL + "/" + INVALID_NANA_ID +"/delete")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isNotFound());
+                .andExpect(status().isMethodNotAllowed());
     }
+    
+    
 }
