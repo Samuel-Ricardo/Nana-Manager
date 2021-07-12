@@ -15,6 +15,8 @@ import com.study.nanamanager.exceptions.NanaNotFoundException;
 import com.study.nanamanager.factory.NanaFactory;
 import static com.study.nanamanager.factory.NanaFactory.getDefaultDTO;
 import com.study.nanamanager.model.entity.NanaG;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 import org.assertj.core.api.Assertions;
 import static org.assertj.core.api.Assertions.*;
@@ -124,4 +126,19 @@ public class NanaServiceTest {
         assertThrows(NanaNotFoundException.class, () -> service.findByName(expectedFoundNanaDTO.getName()));
     }
 
+    @Test
+    void whenListNanaIsCalledThenReturnAListOfNanas() {
+        // given
+        NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
+        NanaG expectedFoundNana = mapper.toModel(expectedFoundNanaDTO);
+
+        //when
+        when(repository.findAll()).thenReturn(Collections.singletonList(expectedFoundNana));
+
+        //then
+        List<Response<NanaDTO>> foundListNanasDTO = service.listAll();
+
+        assertThat(foundListNanasDTO, is(not(empty())));
+        assertThat(foundListNanasDTO.get(0).getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
+    }
 }
