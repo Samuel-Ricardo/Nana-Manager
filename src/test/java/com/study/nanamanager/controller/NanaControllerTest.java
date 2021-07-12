@@ -37,6 +37,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * @author Samuel
  */
 import static com.study.nanamanager.utils.JsonConverter.toJsonString;
+import java.util.Collections;
+import java.util.List;
 import static org.mockito.Mockito.lenient;
 
 @ExtendWith(MockitoExtension.class)
@@ -133,4 +135,19 @@ public class NanaControllerTest {
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
+
+     @Test
+    void whenGETListWithNanasIsCalledThenOkStatusIsReturned() throws Exception {
+        // given
+        List<Response<NanaDTO>> all = service.listAll();
+
+        //when
+        when(service.listAll()).thenReturn(all);
+
+        // then
+        mockMvc.perform(get(DEFAULT_URL+"/list-all")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isFound());
+    }
+    
 }
