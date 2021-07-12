@@ -69,7 +69,7 @@ public class NanaControllerTest {
         // given
         NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
 
-        System.out.println("NANA NAME "+toJsonString(nanaDTO));
+        System.out.println("NANA BODY "+toJsonString(nanaDTO));
         
         Response<NanaDTO> createNana = service.createNana(nanaDTO);
         
@@ -83,5 +83,18 @@ public class NanaControllerTest {
                 .andExpect(status().isCreated());
 //                .andExpect(jsonPath("$.name", is(nanaDTO.getName())))
 //                .andExpect(jsonPath("$.stock", is(nanaDTO.getStock())));
+    }
+    
+     @Test
+    void whenPOSTIsCalledWithoutRequiredFieldThenAnErrorIsReturned() throws Exception {
+        // given
+        NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
+        nanaDTO.setName(null);
+
+        // then
+        mockMvc.perform(post(DEFAULT_URL+"/create")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(toJsonString(nanaDTO)))
+                .andExpect(status().isBadRequest());
     }
 }

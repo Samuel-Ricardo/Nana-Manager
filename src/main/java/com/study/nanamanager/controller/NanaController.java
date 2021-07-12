@@ -78,7 +78,7 @@ public class NanaController implements NanaControllerDoc {
     @Override
     @PutMapping("/{id}/update")
     @ResponseStatus(HttpStatus.OK)
-    public Response<NanaDTO> update(@PathVariable Long id, @RequestBody NanaDTO newNana) throws NanaNotFoundException {
+    public Response<NanaDTO> update(@PathVariable Long id, @RequestBody @Valid NanaDTO newNana) throws NanaNotFoundException {
 
         return service.update(id, newNana);
     }
