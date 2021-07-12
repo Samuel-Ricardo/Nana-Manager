@@ -27,7 +27,7 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.when;
 import org.springframework.http.MediaType;
 import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.patch;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -97,4 +97,23 @@ public class NanaControllerTest {
                 .content(toJsonString(nanaDTO)))
                 .andExpect(status().isBadRequest());
     }
+    
+    @Test
+    void whenGETIsCalledWithValidNameThenOkStatusIsReturned() throws Exception {
+        // given
+        NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
+
+        Response<NanaDTO> findByName = service.findByName(nanaDTO.getName());
+        
+        findByName.setData(nanaDTO);
+        
+        //when
+        when(service.findByName(nanaDTO.getName())).thenReturn(findByName);
+
+        // then
+        mockMvc.perform(get(DEFAULT_URL + "/" + nanaDTO.getName())
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isFound());
+    }
+
 }
