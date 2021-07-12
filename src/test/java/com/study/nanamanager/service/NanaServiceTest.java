@@ -187,5 +187,39 @@ public class NanaServiceTest {
 
         //assert
         assertThat(updateResponse.getData().getId(), is(equalTo(expectedUpdatedNanaDTO.getId())));
+        assertThat(updateResponse.getData().getName(), not(is(equalTo(expectedUpdatedNanaDTO.getName()))));
+    }
+    
+    @Test 
+    void testUpdateNanaStock() throws NanaNotFoundException {
+        // given
+        NanaDTO expectedUpdatedNanaDTO = NanaFactory.getDefaultDTO();
+        expectedUpdatedNanaDTO.setStock(10L);
+        NanaG expectedUpdatedNana = mapper.toModel(expectedUpdatedNanaDTO);
+
+        // when
+        lenient()
+                .when(repository.save(expectedUpdatedNana))
+                .thenReturn(expectedUpdatedNana);
+        
+        // then
+        Response<NanaDTO> updateResponse = service.updateStock(
+                expectedUpdatedNanaDTO.getId(), 
+                expectedUpdatedNanaDTO.getStock()
+        );
+
+        //assert
+        assertThat(updateResponse.getData().getId(), 
+                is(equalTo(expectedUpdatedNanaDTO.getId())));
+        
+        assertThat( updateResponse.getData().getName(), 
+                not(
+                    is(
+                       equalTo(
+                               expectedUpdatedNanaDTO.getName()
+                       )
+                    )
+                )
+        );
     }
 }
