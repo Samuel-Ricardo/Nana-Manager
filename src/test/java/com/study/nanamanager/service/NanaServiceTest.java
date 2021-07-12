@@ -28,7 +28,6 @@ import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -46,20 +45,18 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import org.springframework.http.HttpStatus;
 
-
 /**
  *
  * @author Samuel
  */
-
 @ExtendWith(MockitoExtension.class)
 public class NanaServiceTest {
-    
+
     private static final long INAVLID_NANA_ID = 1L;
-    
+
     @Mock
     private NanaRepository repository;
-    
+
     private NanaMapper mapper = NanaMapper.INSTANCE;
 
     @InjectMocks
@@ -67,15 +64,15 @@ public class NanaServiceTest {
 
     @Test
     void whenNanaInformedThenItShouldBeCreated() throws NanaAlreadyRegisteredException {
-    
+
         // given
         NanaDTO expectedNanaDTO = getDefaultDTO();
         NanaG expectedSavedNana = mapper.toModel(expectedNanaDTO);
-    
+
         // when
         lenient().when(repository.findByName(expectedNanaDTO.getName())).thenReturn(Optional.empty());
         lenient().when(repository.save(expectedSavedNana)).thenReturn(expectedSavedNana);
-        
+
         //then
         Response<NanaDTO> createdNanaDTO = service.createNana(expectedNanaDTO);
 
@@ -84,8 +81,7 @@ public class NanaServiceTest {
 //        assertThat(createdNanaDTO.getData().getName(), is(equalTo(expectedNanaDTO.getName())));
 //        assertThat(createdNanaDTO.getData().getStock(), is(equalTo(expectedNanaDTO.getStock())));
     }
-    
-    
+
     @Test
     void whenAlreadyRegisteredNanaInformedThenAnExceptionShouldBeThrown() {
         // given
@@ -98,12 +94,12 @@ public class NanaServiceTest {
         // then
         assertThrows(NanaAlreadyRegisteredException.class, () -> service.createNana(expectedNanaDTO));
     }
-    
+
     @Test
     void whenValidNanaNameIsGivenThenReturnANana() throws NanaNotFoundException {
         // given
         NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
-        NanaG expectedFoundNana =  mapper.toModel(expectedFoundNanaDTO);
+        NanaG expectedFoundNana = mapper.toModel(expectedFoundNanaDTO);
 
         // when
         when(repository.findByName(expectedFoundNana.getName())).thenReturn(Optional.of(expectedFoundNana));
@@ -114,7 +110,7 @@ public class NanaServiceTest {
         assertThat(foundNanaDTO.getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
     }
 
-     @Test
+    @Test
     void whenNotRegisteredNanaNameIsGivenThenThrowAnException() {
         // given
         NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
@@ -141,7 +137,7 @@ public class NanaServiceTest {
         assertThat(foundListNanasDTO, is(not(empty())));
         assertThat(foundListNanasDTO.get(0).getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
     }
-    
+
     @Test
     void whenListNanaIsCalledThenReturnAnEmptyListOfNanas() {
         //when
@@ -152,9 +148,9 @@ public class NanaServiceTest {
 
         assertThat(foundListNanasDTO, is(empty()));
     }
-    
+
     @Test
-    void whenExclusionIsCalledWithValidIdThenANanaShouldBeDeleted() throws NanaNotFoundException{
+    void whenExclusionIsCalledWithValidIdThenANanaShouldBeDeleted() throws NanaNotFoundException {
         // given
         NanaDTO expectedDeletedNanaDTO = NanaFactory.getDefaultDTO();
         NanaG expectedDeletedNana = mapper.toModel(expectedDeletedNanaDTO);
@@ -168,20 +164,20 @@ public class NanaServiceTest {
 
 //        verify(repository, times(1)).findById(expectedDeletedNanaDTO.getId());
 //        verify(repository, times(1)).deleteById(expectedDeletedNanaDTO.getId());
-        
         assertThat(deletedNana.getData().getId(), is(equalTo(expectedDeletedNanaDTO.getId())));
     }
 
-    @Test 
+    @Test
     void testUpdateNana() throws NanaNotFoundException {
         // given
         NanaDTO expectedUpdatedNanaDTO = NanaFactory.getDefaultDTO();
+        expectedUpdatedNanaDTO.setId(1l);
         expectedUpdatedNanaDTO.setName("New Name");
         NanaG expectedUpdatedNana = mapper.toModel(expectedUpdatedNanaDTO);
 
         // when
         lenient().when(repository.save(expectedUpdatedNana)).thenReturn(expectedUpdatedNana);
-        
+
         // then
         Response<NanaDTO> updateResponse = service.update(expectedUpdatedNanaDTO.getId(), expectedUpdatedNanaDTO);
 
@@ -189,8 +185,8 @@ public class NanaServiceTest {
         assertThat(updateResponse.getData().getId(), is(equalTo(expectedUpdatedNanaDTO.getId())));
         assertThat(updateResponse.getData().getName(), not(is(equalTo(expectedUpdatedNanaDTO.getName()))));
     }
-    
-    @Test 
+
+    @Test
     void testUpdateNanaStock() throws NanaNotFoundException {
         // given
         NanaDTO expectedUpdatedNanaDTO = NanaFactory.getDefaultDTO();
@@ -201,24 +197,24 @@ public class NanaServiceTest {
         lenient()
                 .when(repository.save(expectedUpdatedNana))
                 .thenReturn(expectedUpdatedNana);
-        
+
         // then
         Response<NanaDTO> updateResponse = service.updateStock(
-                expectedUpdatedNanaDTO.getId(), 
+                expectedUpdatedNanaDTO.getId(),
                 expectedUpdatedNanaDTO.getStock()
         );
 
         //assert
-        assertThat(updateResponse.getData().getId(), 
+        assertThat(updateResponse.getData().getId(),
                 is(equalTo(expectedUpdatedNanaDTO.getId())));
-        
-        assertThat( updateResponse.getData().getName(), 
+
+        assertThat(updateResponse.getData().getName(),
                 not(
-                    is(
-                       equalTo(
-                               expectedUpdatedNanaDTO.getName()
-                       )
-                    )
+                        is(
+                                equalTo(
+                                        expectedUpdatedNanaDTO.getName()
+                                )
+                        )
                 )
         );
     }
