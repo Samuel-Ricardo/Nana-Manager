@@ -27,6 +27,27 @@ public class Response<Data> {
         this.message = message;
         this.status = status;
     }
+    
+    
+    
+    @Override
+    public String toString(){
+        
+        return(
+                "Class: Response<Data>"
+                + "\n"
+                + "\n"
+                + "Fields:"
+                + "\n"
+                + "Message: "+message+""
+                + "\n"
+                + "HttpStatus: "+status+""
+                + "\n"
+                + "Data: "+data.toString()
+              );
+    }
+    
+    
 
     public Data getData() {
         return data;

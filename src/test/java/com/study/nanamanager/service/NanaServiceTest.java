@@ -41,6 +41,7 @@ import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import org.springframework.http.HttpStatus;
 
 
 /**
@@ -75,9 +76,23 @@ public class NanaServiceTest {
         //then
         Response<NanaDTO> createdNanaDTO = service.createNana(expectedNanaDTO);
 
+        assertThat(createdNanaDTO.getStatus(), is(equalTo(HttpStatus.CREATED)));
+//        assertThat(createdNanaDTO.getData().getId(), is(equalTo(expectedNanaDTO.getId())));
+//        assertThat(createdNanaDTO.getData().getName(), is(equalTo(expectedNanaDTO.getName())));
+//        assertThat(createdNanaDTO.getData().getStock(), is(equalTo(expectedNanaDTO.getStock())));
+    }
     
-        assertThat(createdNanaDTO.getData().getId(), is(equalTo(expectedNanaDTO.getId())));
-        assertThat(createdNanaDTO.getData().getName(), is(equalTo(expectedNanaDTO.getName())));
-        assertThat(createdNanaDTO.getData().getStock(), is(equalTo(expectedNanaDTO.getStock())));
+    
+    @Test
+    void whenAlreadyRegisteredNanaInformedThenAnExceptionShouldBeThrown() {
+        // given
+        NanaDTO expectedNanaDTO = NanaFactory.getDefaultDTO();
+        NanaG duplicatedNana = mapper.toModel(expectedNanaDTO);
+
+        // when
+        when(repository.findByName(expectedNanaDTO.getName())).thenReturn(Optional.of(duplicatedNana));
+
+        // then
+        assertThrows(NanaAlreadyRegisteredException.class, () -> service.createNana(expectedNanaDTO));
     }
 }
