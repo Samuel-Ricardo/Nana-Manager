@@ -194,5 +194,25 @@ public class NanaControllerTest {
                 .content(toJsonString(defaultDTO)))
                 .andExpect(status().isOk());
     }
+ 
+    @Test
+    void updateNanaStock() throws Exception {
+        
+        //give
+        NanaDTO defaultDTO = getDefaultDTO();
+        
+        Response<NanaDTO> update = service.updateStock(defaultDTO.getId(), 30L);
     
+        defaultDTO.setStock(30L);
+        
+        //when
+        lenient().when(service.updateStock(defaultDTO.getId(), 30L)).thenReturn(update);
+    
+        //then
+        
+        mockMvc.perform(put(DEFAULT_URL+"/"+defaultDTO.getId()+"/update")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(toJsonString(defaultDTO)))
+                .andExpect(status().isOk());
+    }
 }

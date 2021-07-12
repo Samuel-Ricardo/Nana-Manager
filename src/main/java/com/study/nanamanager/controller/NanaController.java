@@ -84,9 +84,9 @@ public class NanaController implements NanaControllerDoc {
     }
 
     @Override
-    @PatchMapping("/{id}/updateStock")
+    @PutMapping("/{id}/update-stock")
     @ResponseStatus(HttpStatus.OK)
-    public Response<NanaDTO> updateStock(Long id, Long stock) throws NanaNotFoundException {
+    public Response<NanaDTO> updateStock(@PathVariable Long id, @RequestBody Long stock) throws NanaNotFoundException {
     
         return service.updateStock(id, stock);
     }
