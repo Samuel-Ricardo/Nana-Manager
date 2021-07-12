@@ -10,6 +10,7 @@ import com.study.nanamanager.dto.request.NanaDTO;
 import com.study.nanamanager.dto.response.Response;
 import com.study.nanamanager.exceptions.NanaNotFoundException;
 import com.study.nanamanager.factory.NanaFactory;
+import static com.study.nanamanager.factory.NanaFactory.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -161,7 +162,7 @@ public class NanaControllerTest {
         // then
         mockMvc.perform(delete(DEFAULT_URL + "/" + 1L +"/delete")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isMethodNotAllowed());
+                .andExpect(status().isOk());
     }
     
     @Test
@@ -172,8 +173,26 @@ public class NanaControllerTest {
         // then
         mockMvc.perform(delete(DEFAULT_URL + "/" + INVALID_NANA_ID +"/delete")
                 .contentType(MediaType.APPLICATION_JSON))
-                .andExpect(status().isMethodNotAllowed());
+                .andExpect(status().isNotFound());
     }
     
+    @Test
+    void updateNana() throws Exception {
+        
+        //give
+        NanaDTO defaultDTO = getDefaultDTO();
+        
+        Response<NanaDTO> update = service.update(defaultDTO.getId(), defaultDTO);
+    
+        //when
+        lenient().when(service.update(defaultDTO.getId(), defaultDTO)).thenReturn(update);
+    
+        //then
+        
+        mockMvc.perform(put(DEFAULT_URL+"/"+defaultDTO.getId()+"/update")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(toJsonString(defaultDTO)))
+                .andExpect(status().isOk());
+    }
     
 }
