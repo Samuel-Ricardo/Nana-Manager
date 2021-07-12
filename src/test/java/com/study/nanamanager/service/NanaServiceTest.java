@@ -98,7 +98,7 @@ public class NanaServiceTest {
     }
     
     @Test
-    void whenValidBeerNameIsGivenThenReturnABeer() throws NanaNotFoundException {
+    void whenValidNanaNameIsGivenThenReturnANana() throws NanaNotFoundException {
         // given
         NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
         NanaG expectedFoundNana =  mapper.toModel(expectedFoundNanaDTO);
@@ -107,9 +107,21 @@ public class NanaServiceTest {
         when(repository.findByName(expectedFoundNana.getName())).thenReturn(Optional.of(expectedFoundNana));
 
         // then
-        Response<NanaDTO> foundBeerDTO = service.findByName(expectedFoundNanaDTO.getName());
+        Response<NanaDTO> foundNanaDTO = service.findByName(expectedFoundNanaDTO.getName());
 
-        assertThat(foundBeerDTO.getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
+        assertThat(foundNanaDTO.getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
+    }
+
+     @Test
+    void whenNotRegisteredNanaNameIsGivenThenThrowAnException() {
+        // given
+        NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
+
+        // when
+        when(repository.findByName(expectedFoundNanaDTO.getName())).thenReturn(Optional.empty());
+
+        // then
+        assertThrows(NanaNotFoundException.class, () -> service.findByName(expectedFoundNanaDTO.getName()));
     }
 
 }
