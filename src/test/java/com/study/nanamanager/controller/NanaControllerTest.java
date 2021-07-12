@@ -106,11 +106,12 @@ public class NanaControllerTest {
 
         Response<NanaDTO> findByName = service.findByName(nanaDTO.getName());
         
-        findByName.setData(nanaDTO);
-        
         //when
-        when(service.findByName(nanaDTO.getName())).thenReturn(findByName);
+        lenient().when(service.findByName(nanaDTO.getName())).thenReturn(findByName);
 
+                
+
+        
         // then
         mockMvc.perform(get(DEFAULT_URL + "/" + nanaDTO.getName())
                 .contentType(MediaType.APPLICATION_JSON))
@@ -120,13 +121,15 @@ public class NanaControllerTest {
     @Test
     void whenGETIsCalledWithoutRegisteredNameThenNotFoundStatusIsReturned() throws Exception {
         // given
-        NanaDTO beerDTO = NanaFactory.getDefaultDTO();
+        NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
 
+        nanaDTO.setName("Alface");
+        
         //when
-        when(service.findByName(beerDTO.getName())).thenThrow(NanaNotFoundException.class);
+        lenient().when(service.findByName(nanaDTO.getName())).thenThrow(NanaNotFoundException.class);
 
         // then
-        mockMvc.perform(get(DEFAULT_URL + "/" + beerDTO.getName())
+        mockMvc.perform(get(DEFAULT_URL + "/" + nanaDTO.getName())
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isNotFound());
     }
