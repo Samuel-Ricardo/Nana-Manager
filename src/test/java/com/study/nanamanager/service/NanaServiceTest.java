@@ -152,4 +152,24 @@ public class NanaServiceTest {
 
         assertThat(foundListNanasDTO, is(empty()));
     }
+    
+    @Test
+    void whenExclusionIsCalledWithValidIdThenANanaShouldBeDeleted() throws NanaNotFoundException{
+        // given
+        NanaDTO expectedDeletedNanaDTO = NanaFactory.getDefaultDTO();
+        NanaG expectedDeletedNana = mapper.toModel(expectedDeletedNanaDTO);
+
+        // when
+        when(repository.findById(expectedDeletedNanaDTO.getId())).thenReturn(Optional.of(expectedDeletedNana));
+        doNothing().when(repository).deleteById(expectedDeletedNanaDTO.getId());
+
+        // then
+        Response<NanaDTO> deletedNana = service.deleteById(expectedDeletedNanaDTO.getId());
+
+        verify(repository, times(1)).findById(expectedDeletedNanaDTO.getId());
+        verify(repository, times(1)).deleteById(expectedDeletedNanaDTO.getId());
+        
+        assertThat(deletedNana.getData().getId(), is(equalTo(expectedDeletedNanaDTO.getId())));
+    }
+
 }
