@@ -39,9 +39,9 @@ public class Response<Data> {
                 + "\n"
                 + "Fields:"
                 + "\n"
-                + "Message: "+message+""
+                + "Message: "+message
                 + "\n"
-                + "HttpStatus: "+status+""
+                + "HttpStatus: "+status
                 + "\n"
                 + "Data: "+data.toString()
               );
