@@ -150,4 +150,17 @@ public class NanaControllerTest {
                 .andExpect(status().isFound());
     }
     
+    @Test
+    void whenDELETEIsCalledWithValidIdThenNoContentStatusIsReturned() throws Exception {
+        // given
+        NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
+
+        //when
+        lenient().doNothing().when(service).deleteById(nanaDTO.getId());
+
+        // then
+        mockMvc.perform(delete(DEFAULT_URL + "/" + nanaDTO.getId())
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
 }
