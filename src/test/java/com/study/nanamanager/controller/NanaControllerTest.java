@@ -8,6 +8,7 @@ package com.study.nanamanager.controller;
 import com.study.nanamanager.dao.service.NanaService;
 import com.study.nanamanager.dto.request.NanaDTO;
 import com.study.nanamanager.dto.response.Response;
+import com.study.nanamanager.exceptions.NanaNotFoundException;
 import com.study.nanamanager.factory.NanaFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -99,7 +100,7 @@ public class NanaControllerTest {
     }
     
     @Test
-    void whenGETIsCalledWithValidNameThenOkStatusIsReturned() throws Exception {
+    void whenGETIsCalledWithValidNameThenFoundStatusIsReturned() throws Exception {
         // given
         NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
 
@@ -116,4 +117,17 @@ public class NanaControllerTest {
                 .andExpect(status().isFound());
     }
 
+    @Test
+    void whenGETIsCalledWithoutRegisteredNameThenNotFoundStatusIsReturned() throws Exception {
+        // given
+        NanaDTO beerDTO = NanaFactory.getDefaultDTO();
+
+        //when
+        when(service.findByName(beerDTO.getName())).thenThrow(NanaNotFoundException.class);
+
+        // then
+        mockMvc.perform(get(DEFAULT_URL + "/" + beerDTO.getName())
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isNotFound());
+    }
 }
