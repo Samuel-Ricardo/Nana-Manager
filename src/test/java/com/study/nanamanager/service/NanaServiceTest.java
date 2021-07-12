@@ -141,4 +141,15 @@ public class NanaServiceTest {
         assertThat(foundListNanasDTO, is(not(empty())));
         assertThat(foundListNanasDTO.get(0).getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
     }
+    
+    @Test
+    void whenListNanaIsCalledThenReturnAnEmptyListOfNanas() {
+        //when
+        when(repository.findAll()).thenReturn(Collections.EMPTY_LIST);
+
+        //then
+        List<Response<NanaDTO>> foundListNanasDTO = service.listAll();
+
+        assertThat(foundListNanasDTO, is(empty()));
+    }
 }
