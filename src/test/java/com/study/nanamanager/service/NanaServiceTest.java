@@ -11,6 +11,7 @@ import com.study.nanamanager.dto.mapper.NanaMapper;
 import com.study.nanamanager.dto.request.NanaDTO;
 import com.study.nanamanager.dto.response.Response;
 import com.study.nanamanager.exceptions.NanaAlreadyRegisteredException;
+import com.study.nanamanager.exceptions.NanaNotFoundException;
 import com.study.nanamanager.factory.NanaFactory;
 import static com.study.nanamanager.factory.NanaFactory.getDefaultDTO;
 import com.study.nanamanager.model.entity.NanaG;
@@ -95,4 +96,20 @@ public class NanaServiceTest {
         // then
         assertThrows(NanaAlreadyRegisteredException.class, () -> service.createNana(expectedNanaDTO));
     }
+    
+    @Test
+    void whenValidBeerNameIsGivenThenReturnABeer() throws NanaNotFoundException {
+        // given
+        NanaDTO expectedFoundNanaDTO = NanaFactory.getDefaultDTO();
+        NanaG expectedFoundNana =  mapper.toModel(expectedFoundNanaDTO);
+
+        // when
+        when(repository.findByName(expectedFoundNana.getName())).thenReturn(Optional.of(expectedFoundNana));
+
+        // then
+        Response<NanaDTO> foundBeerDTO = service.findByName(expectedFoundNanaDTO.getName());
+
+        assertThat(foundBeerDTO.getData().getName(), is(equalTo(expectedFoundNanaDTO.getName())));
+    }
+
 }
