@@ -6,7 +6,11 @@
 package com.study.nanamanager.controller;
 
 import com.study.nanamanager.dao.service.NanaService;
+import com.study.nanamanager.dto.request.NanaDTO;
+import com.study.nanamanager.dto.response.Response;
+import com.study.nanamanager.factory.NanaFactory;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -17,10 +21,22 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
+import static org.hamcrest.core.Is.is;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.when;
+import org.springframework.http.MediaType;
+import static org.springframework.mock.http.server.reactive.MockServerHttpRequest.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 /**
  *
  * @author Samuel
  */
+import com.study.nanamanager.utils.JsonConverter;
+import static com.study.nanamanager.utils.JsonConverter.toJsonString;
 @ExtendWith(MockitoExtension.class)
 public class NanaControllerTest {
 
@@ -44,5 +60,24 @@ public class NanaControllerTest {
                 .setViewResolvers((s, locale) -> new MappingJackson2JsonView())
                 .build();
     
+    }
+    
+    @Test
+    void whenPOSTIsCalledThenANanaIsCreated() throws Exception {
+        // given
+        NanaDTO nanaDTO = NanaFactory.getDefaultDTO();
+
+        Response<NanaDTO> createNana = service.createNana(nanaDTO);
+        
+        // when
+        when(service.createNana(nanaDTO)).thenReturn(createNana);
+
+        // then
+        mockMvc.perform(post(DEFAULT_URL+"/create")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(toJsonString(nanaDTO)))
+                .andExpect(status().isCreated())
+                .andExpect(jsonPath("$.name", is(nanaDTO.getName())))
+                .andExpect(jsonPath("$.stock", is(nanaDTO.getStock())));
     }
 }
