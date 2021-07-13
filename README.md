@@ -69,23 +69,30 @@ A package of custom errors and exceptions was developed to meet the needs of the
 
 ##  	:card_index_dividers: Data Registered By API:
 
-Name
+- Name
 
-Type - (GUARAN, NO_SUGAR, NATU)
- name to mark the type, such as a tag
+- __Type__ - (GUARAN | NO_SUGAR | NATU)
+   > name to mark the type, such as a tag
 
-NanaType - Stores data related to the type, such as the amount of nutrients, (an example is the one without sugar that has 0 sugar)
+- __NanaType__ - Stores data related to the type, such as the amount of nutrients
+   > (an example is the one without sugar that has 0 sugar)
 
-NanaPacking - the soft drink packaging / container, stores information such as the type of packaging (eg plastic) and the size in milliliters
+- __NanaPacking__ - 
+   > the soft drink packaging / container, stores information such as the type of packaging (like plastic) and the size in milliliters
 
-stock
+- __stock__
 
-Stores - List of stores that sell this guaraná and the price in each store, next to the store name
+- __Stores__ - 
+   > List of stores that sell this guaraná and the price in each store, next to the store name
 
+   <br>
+   
 *NOTE - the getNutrients() method calculates in real time and returns the amount of nutrients equivalent to the type of guarana, ingredients and the amount (ml) in the package.
 
 *NOTE - The Nutrients Class has information on carbohydrates, calories, sugars, sodium and ingrdients, except for the sodium that returns in milligrams, all return in grams.
 
+  #
+   
 Controller and Service are 100% covered by unit testing ensuring API robustness.
 
 During the Tests some classes were created to help the development, such as NanaFactory that builds predefined models and DTO's and an Object to String converter formatted in Json.
@@ -94,6 +101,7 @@ Mockito, hamcrest and JUnit were used for the tests
 </p>
    
 #
+   
  <br>
  
   <p>
