@@ -1,6 +1,6 @@
 # Naná Manager
 
-<p align="center"><a href="https://elixir-lang.org/" ><img width="250px" src="https://logodownload.org/wp-content/uploads/2014/09/guarana-logo-antartica.png"/><a></p>
+<p align="center"><a href="https://www.guaranaantarctica.com.br/" ><img width="250px" src="https://logodownload.org/wp-content/uploads/2014/09/guarana-logo-antartica.png"/><a></p>
 <h4 align="center">GFT Java #2 🚀</h4>
 <h4 align="center">Application idealized during a Java Bootcamp promoted by <a href="https://www.gft.com/"> @GFT </a> in Partnership With <a href="https://web.digitalinnovation.one/"> @Digital Inovation One</a> </h4>
 
@@ -29,7 +29,7 @@
 <br>
  
 <p align="center" id="project">
-  Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica :brazil: , which this year (2021) is celebrating its 100 years and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
+ <img width="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"> Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica :brazil: , which this year (2021) is celebrating its <a href="https://www.guaranaantarctica.com.br/100anos/?utm_medium=search&utm_source=googleads&utm_campaign=guaranaantarctica_start-centenario&utm_term&utm_content=saz_bra_start-centenario_gua_trf_centenario-marca_jun2021-dtl-net-sag_src_ggl_trf_na_nqnp-a-18100-ptb-saz-bra-behvsrch-_cpc_marca_gsn_sea_text__csd_trf_nqnp-a-18100-ptb-saz-bra-behvsrch-_behvsrch_dtl_dlnet-ad1-&gclid=Cj0KCQjw0K-HBhDDARIsAFJ6UGiZYM5XpB9PXKo2ODcNRT9_eQEgwO3gLwIUeAnjCWj9WTByByQr0OAaAiUOEALw_wcB">100th anniversary</a> and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
    
 #
    
@@ -220,3 +220,43 @@ Mockito, hamcrest and JUnit were used for the tests
   
   <br>
   <br>
+   
+    
+  <br>
+  <br>
+  
+  <h2 id="author">
+  :octocat: Author
+</h2>
+
+<br>
+
+<a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
+
+  <img width="250px" src="https://github.com/Samuel-Ricardo/RocketPay/blob/master/readmefile/github.jpg"/>
+
+  <br>
+
+   <p><b>Samuel Ricardo</b></p>
+   
+</a>
+
+<h1 align="rigth">
+  
+<a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
+  
+  <img width = "115px" src="https://img.shields.io/badge/Linkedin-1781EB?color=blue&style=for-the-badge&logo=LinkedIn" /> 
+  
+<a>
+
+<a href="https://www.instagram.com/samuel_ricardo.ex/">
+  
+  <img width = "130px" src="https://img.shields.io/badge/Instagram-1781EB?color=purple&style=for-the-badge&logo=Instagram" /> 
+  
+<a>
+  
+<h1>
+
+<br>
+<br>
+
