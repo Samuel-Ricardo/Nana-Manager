@@ -172,3 +172,51 @@ Mockito, hamcrest and JUnit were used for the tests
 - [Swagger](https://swagger.io/)
 - [JUnit](https://junit.org/junit5/)
 - [Hamcrest](http://hamcrest.org/JavaHamcrest/)
+
+
+#
+
+<h2 id="run-project">
+  :zap: Run Project
+</h2>
+
+## :electron: Start Application
+
+### Open Your Git Terminal and Clone This Repositore:
+
+  ``` git
+  
+  $ git clone "https://github.com/Samuel-Ricardo/Nana-Manager/"
+  
+  ```
+  
+### Make pull:
+
+  ``` git
+  
+  $ git pull "https://github.com/Samuel-Ricardo/Nana-Manager/"
+  
+  ```
+  
+### Run Application With Maven
+
+``` cmd
+
+  $ mvn spring-boot:run 
+
+```
+
+### To Run Tests
+
+``` cmd
+
+  $ mvn clean test
+
+```
+
+- <p> Now Your server is running in <b><a href="http://localhost:8080/">localhost:8080</a></b> </p>
+
+- <p> If you want see details of your application database, access the H2 Database: <b><a href="http://localhost:8080/h2-console">localhost:8080/h2-console</a><b/> </p>
+  
+  <br>
+  <br>
