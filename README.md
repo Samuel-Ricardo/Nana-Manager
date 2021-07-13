@@ -131,8 +131,10 @@ Mockito, hamcrest and JUnit were used for the tests
 
 <p> &nbsp;&nbsp;&nbsp; Is the Development Kit for Java Developers with all that be need to programming and run any java applications.</p>
 
- - <p> Most Recent </p>
+
+ - <b>Most Recent</b>
    > <a href="https://www.oracle.com/java/technologies/javase-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
+
 
  - <b>x86 (32bits) Most Recent</b>
    > <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
@@ -144,20 +146,22 @@ Mockito, hamcrest and JUnit were used for the tests
 
 &nbsp;&nbsp;&nbsp; <p> The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
 
- - <p> Spring Framework </p> 
-  >  <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+
+ - Spring Framework  
+   >  <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
 
 
- - <p> Spring Boot Generate a start spring project with a minimal Spring configuratio </p>
-  >  <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+ - Spring Boot Generate a start spring project with a minimal Spring configuratio
+   >  <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
 
 
-### <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> Apache Maven
+### <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> &nbsp;&nbsp;&nbsp; Apache Maven
 
   <p> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
 
- - <p> Maven </p>
-  > <a href="https://maven.apache.org/"> <img width="60px" src="https://maven.apache.org/images/maven-logo-black-on-white.png"></img> </a>
+
+ - Maven 
+   > <a href="https://maven.apache.org/"> <img width="60px" src="https://maven.apache.org/images/maven-logo-black-on-white.png"></img> </a>
 
 #
 
