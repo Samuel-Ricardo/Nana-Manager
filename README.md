@@ -77,7 +77,7 @@ Mockito, hamcrest and JUnit were used for the tests
  <br>
  
   <p>
-    This API is hosted on <a href='https://mr-register-samuel.herokuapp.com/'> Heroku </a> 
+    This API is hosted on <a href='https://nana-manager.herokuapp.com/api/v1/nana-manager/list-all'> Heroku </a> 
   </p>
    
 #
