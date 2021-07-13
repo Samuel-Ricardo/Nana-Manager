@@ -34,7 +34,7 @@
    
 #
    
-Naná is an affectionate way of naming the guarana soda.
+Naná or Guaguá is an affectionate way of naming the guarana soda.
    
  <p>
     This API is hosted on <a href='https://nana-manager.herokuapp.com/api/v1/nana-manager/list-all'> Heroku </a> 
