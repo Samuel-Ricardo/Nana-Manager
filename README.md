@@ -11,7 +11,6 @@
   <a href="#techs">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#run-project">Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#author">Author</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#credits">Credits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
    
 #
@@ -245,13 +244,13 @@ Mockito, hamcrest and JUnit were used for the tests
   
 <a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
   
-  <img width = "115px" src="https://img.shields.io/badge/Linkedin-1781EB?color=blue&style=for-the-badge&logo=LinkedIn" /> 
+  <img width = "115px" src="https://img.shields.io/badge/Linkedin-1781EB?color=black&style=for-the-badge&logo=LinkedIn&logoColor=blue" /> 
   
 <a>
 
 <a href="https://www.instagram.com/samuel_ricardo.ex/">
   
-  <img width = "130px" src="https://img.shields.io/badge/Instagram-1781EB?color=purple&style=for-the-badge&logo=Instagram" /> 
+  <img width = "130px" src="https://img.shields.io/badge/Instagram-1781EB?color=black&style=for-the-badge&logo=Instagram" /> 
   
 <a>
   
