@@ -19,35 +19,55 @@
 <br>
  
 <p align="center" id="project">
-  Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica, which this year (2021) is celebrating its 100 years and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
-
+  Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica :brazil: , which this year (2021) is celebrating its 100 years and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
+   
+#
+   
 Naná is an affectionate way of naming the guarana soda.
+   
+ <p>
+    This API is hosted on <a href='https://nana-manager.herokuapp.com/api/v1/nana-manager/list-all'> Heroku </a> 
+  </p>
+   
+ #
 
-API Routes:
+##  :construction: API Routes: 
 
- Base URL - /api/v1/nana-manager
+ <h3><b> Base URL - /api/v1/nana-manager </b></h3>
 
-create a naná - POST - /create
+ - create a naná - POST - /create
 
-find naná by name - GET - /{name}
 
- list all nanás - GET - /list-all
+ - find naná by name - GET - /{name}
 
- Delete Naná By ID - DELETE - /{id}/delete
+ 
+ - list all nanás - GET - /list-all
 
-update naná by id - PUT - /{id}/update
+ 
+ - Delete Naná By ID - DELETE - /{id}/delete
 
- update stock of nana by id - PUT - /{id}/update-stock
 
-All routes have body and request validation, and return a Http Status referring to their situation (success or failure and which one), a Response system was created where an Object is returned - Response <Data> where Data is the type of Data to be returned along with a message and HttpStatus.
+ - update naná by id - PUT - /{id}/update
 
+ 
+ - update stock of nana by id - PUT - /{id}/update-stock
+
+<p align="justfy">
+All routes have body and request validation, and return a Http Status referring to their situation (success or failure and which one), a Response system was created where an Object is returned - Response < Data > where Data is the type of Data to be returned along with a message and HttpStatus.
+</p>
+   
+   #
+   
 Using SOLID more specifically the Single main responsibility, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
 
 The DTO was added one more layer in the Model (Entity), which validates the data, while the Entity is responsible for serving as a Model for the Database, with Mapper being responsible for being the intermediary between them, converting and mapping DTO for Entity and Entity for DTO.
 
 A package of custom errors and exceptions was developed to meet the needs of the app.
 
-Data Registered By API:
+   #
+   
+
+##  	:card_index_dividers: Data Registered By API:
 
 Name
 
