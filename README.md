@@ -129,28 +129,27 @@ Mockito, hamcrest and JUnit were used for the tests
 
 ### <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></img> Java Development Kit
 
-  <p> Is the Development Kit for Java Developers with all that be need to programming and run any java applications.</p>
+<p> &nbsp;&nbsp;&nbsp; Is the Development Kit for Java Developers with all that be need to programming and run any java applications.</p>
 
-  <p> <b>Most Recent</b> </p>
-  
-  > <a href="https://www.oracle.com/java/technologies/javase-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
+ - <p> <b>Most Recent</b> </p>
+   > <a href="https://www.oracle.com/java/technologies/javase-downloads.html"> &nbsp;&nbsp;&nbsp; <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
 
-  <p> <b>x86 (32bits) Most Recent</b> </p>
-  
-  > <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
+ - <b>x86 (32bits) Most Recent</b>
+   > <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html"> &nbsp;&nbsp;&nbsp; <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
 
-### <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></img> Spring
+<br>
+<br>
 
-  <p> The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
+<h3> <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></img> &nbsp;&nbsp;&nbsp; Spring </h3>
 
-  <p> Spring Framework </p>
-  
-  > <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+&nbsp;&nbsp;&nbsp; <p> The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
+
+ - <p> Spring Framework </p> 
+   >  <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
 
 
-  <p> Spring Boot Generate a start spring project with a minimal Spring configuratio </p>
-  
-  > <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+ - <p> Spring Boot Generate a start spring project with a minimal Spring configuratio </p>
+   >  <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
 
 
 ### <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> Apache Maven
