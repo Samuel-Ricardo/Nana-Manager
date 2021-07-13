@@ -4,6 +4,16 @@
 <h4 align="center">GFT Java #2 🚀</h4>
 <h4 align="center">Application idealized during a Java Bootcamp promoted by <a href="https://www.gft.com/"> @GFT </a> in Partnership With <a href="https://web.digitalinnovation.one/"> @Digital Inovation One</a> </h4>
 
+   
+<p align="center">
+   |&nbsp;
+  <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#techs">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#run-project">Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="#author">Author</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#credits">Credits</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
+   
 #
    
    <h1 align="center">
@@ -77,12 +87,12 @@ A package of custom errors and exceptions was developed to meet the needs of the
 - __NanaType__ - Stores data related to the type, such as the amount of nutrients
    > (an example is the one without sugar that has 0 sugar)
 
-- __NanaPacking__ - 
+- __NanaPacking__ 
    > the soft drink packaging / container, stores information such as the type of packaging (like plastic) and the size in milliliters
 
 - __stock__
 
-- __Stores__ - 
+- __Stores__
    > List of stores that sell this guaraná and the price in each store, next to the store name
 
    <br>
@@ -111,4 +121,52 @@ Mockito, hamcrest and JUnit were used for the tests
 #
  
    <br>
- <br
+ <br>
+   
+<h2 id="techs">
+  🚀 Main Technologies and Concepts Studieds:
+</h2>
+
+### <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></img> Java Development Kit
+
+  <p> Is the Development Kit for Java Developers with all that be need to programming and run any java applications.</p>
+
+  <p> <b>Most Recent</b> </p>
+  
+  > <a href="https://www.oracle.com/java/technologies/javase-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
+
+  <p> <b>x86 (32bits) Most Recent</b> </p>
+  
+  > <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
+
+### <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></img> Spring
+
+  <p> The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
+
+  <p> Spring Framework </p>
+  
+  > <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+
+
+  <p> Spring Boot Generate a start spring project with a minimal Spring configuratio </p>
+  
+  > <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
+
+
+### <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> Apache Maven
+
+  <p> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
+
+  <p> Maven </p>
+  
+  > <a href="https://maven.apache.org/"> <img width="60px" src="https://maven.apache.org/images/maven-logo-black-on-white.png"></img> </a>
+
+#
+
+- [MapStruct](https://mapstruct.org/)
+- [TomCat Server](https://tomcat.apache.org/)
+- [H2 Database](https://github.com/h2database/h2database)
+- [Lombok](https://projectlombok.org/setup/maven)
+- [Swagger](https://swagger.io/)
+- [JUnit](https://junit.org/junit5/)
+- [Hamcrest](http://hamcrest.org/JavaHamcrest/)
