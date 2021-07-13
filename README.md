@@ -1,7 +1,9 @@
 # Naná Manager
 
 <p align="center"><a href="https://www.guaranaantarctica.com.br/" ><img width="250px" src="https://logodownload.org/wp-content/uploads/2014/09/guarana-logo-antartica.png"/><a></p>
+   
 <h4 align="center">GFT Java #2 🚀</h4>
+   
 <h4 align="center">Application idealized during a Java Bootcamp promoted by <a href="https://www.gft.com/"> @GFT </a> in Partnership With <a href="https://web.digitalinnovation.one/"> @Digital Inovation One</a> </h4>
 
    
@@ -15,7 +17,7 @@
    
 #
    
-   <h1 align="center">
+ <h1 align="center">
   <a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
     <img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-1781EB?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=1781EB)%5D">
   </a>
@@ -28,7 +30,7 @@
 <br>
  
 <p align="center" id="project">
- <img width="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"> Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica :brazil: , which this year (2021) is celebrating its <a href="https://www.guaranaantarctica.com.br/100anos/?utm_medium=search&utm_source=googleads&utm_campaign=guaranaantarctica_start-centenario&utm_term&utm_content=saz_bra_start-centenario_gua_trf_centenario-marca_jun2021-dtl-net-sag_src_ggl_trf_na_nqnp-a-18100-ptb-saz-bra-behvsrch-_cpc_marca_gsn_sea_text__csd_trf_nqnp-a-18100-ptb-saz-bra-behvsrch-_behvsrch_dtl_dlnet-ad1-&gclid=Cj0KCQjw0K-HBhDDARIsAFJ6UGiZYM5XpB9PXKo2ODcNRT9_eQEgwO3gLwIUeAnjCWj9WTByByQr0OAaAiUOEALw_wcB">100th anniversary</a> and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
+ <img width="20px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"> Spring Rest API for Guaraná flavored Soft Drink (naná) from the Brazilian brand Guaraná Antártica :brazil: , which this year (2021) is celebrating its <a href="https://www.guaranaantarctica.com.br/100anos/">100th anniversary</a> and this API is my way of honoring and giving a gift to this company that brings a lot of flavor to Brazilians' tables .
    
 #
    
@@ -67,13 +69,17 @@ All routes have body and request validation, and return a Http Status referring 
    
    #
    
-Using SOLID more specifically the Single main responsibility, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
+   <b>
+   
+  - Using SOLID more specifically the Single main responsibility, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
 
-The DTO was added one more layer in the Model (Entity), which validates the data, while the Entity is responsible for serving as a Model for the Database, with Mapper being responsible for being the intermediary between them, converting and mapping DTO for Entity and Entity for DTO.
+  - The DTO was added one more layer in the Model (Entity), which validates the data, while the Entity is responsible for serving as a Model for the Database, with Mapper being responsible for being the intermediary between them, converting and mapping DTO for Entity and Entity for DTO.
 
-A package of custom errors and exceptions was developed to meet the needs of the app.
-
-   #
+  - A package of custom errors and exceptions was developed to meet the needs of the app.
+  </b>
+   
+   
+#
    
 
 ##  	:card_index_dividers: Data Registered By API:
@@ -96,9 +102,9 @@ A package of custom errors and exceptions was developed to meet the needs of the
 
    <br>
    
-*NOTE - the getNutrients() method calculates in real time and returns the amount of nutrients equivalent to the type of guarana, ingredients and the amount (ml) in the package.
+__* NOTE__ - the getNutrients() method calculates in real time and returns the amount of nutrients equivalent to the type of guarana, ingredients and the amount (ml) in the package.
 
-*NOTE - The Nutrients Class has information on carbohydrates, calories, sugars, sodium and ingrdients, except for the sodium that returns in milligrams, all return in grams.
+__* NOTE__ - The Nutrients Class has information on carbohydrates, calories, sugars, sodium and ingrdients, except for the sodium that returns in milligrams, all return in grams.
 
   #
    
@@ -126,10 +132,11 @@ Mockito, hamcrest and JUnit were used for the tests
   🚀 Main Technologies and Concepts Studieds:
 </h2>
 
-### <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></img> Java Development Kit
+## <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"></img> Java Development Kit
 
 <p> &nbsp;&nbsp;&nbsp; Is the Development Kit for Java Developers with all that be need to programming and run any java applications.</p>
 
+<br>
 
  - <b>Most Recent</b>
    > <a href="https://www.oracle.com/java/technologies/javase-downloads.html"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg"></img> </a>
@@ -141,10 +148,11 @@ Mockito, hamcrest and JUnit were used for the tests
 <br>
 <br>
 
-<h3> <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></img> &nbsp;&nbsp;&nbsp; Spring </h3>
+<h2> <img width="45px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"></img> &nbsp;&nbsp;&nbsp; Spring </h2>
 
 &nbsp;&nbsp;&nbsp; <p> The Spring Framework provides a comprehensive programming and configuration model for modern Java-based enterprise applications - on any kind of deployment platform.</p>
 
+<br>
 
  - Spring Framework  
    >  <a href="https://spring.io/quickstart"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
@@ -153,11 +161,15 @@ Mockito, hamcrest and JUnit were used for the tests
  - Spring Boot Generate a start spring project with a minimal Spring configuratio
    >  <a href="https://start.spring.io/"> <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original-wordmark.svg"></img> </a>
 
+<br>
+<br>
 
-### <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> &nbsp;&nbsp;&nbsp; Apache Maven
+
+## <img width="60px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg"></img> &nbsp;&nbsp;&nbsp; Apache Maven
 
   <p> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
 
+<br>
 
  - Maven 
    > <a href="https://maven.apache.org/"> <img width="60px" src="https://maven.apache.org/images/maven-logo-black-on-white.png"></img> </a>
@@ -219,10 +231,6 @@ Mockito, hamcrest and JUnit were used for the tests
   
   <br>
   <br>
-   
-    
-  <br>
-  <br>
   
   <h2 id="author">
   :octocat: Author
@@ -253,9 +261,11 @@ Mockito, hamcrest and JUnit were used for the tests
   <img width = "130px" src="https://img.shields.io/badge/Instagram-1781EB?color=black&style=for-the-badge&logo=Instagram" /> 
   
 <a>
-  
-<h1>
 
 <br>
+   <h1 align="center">
+   
+   <a href="https://www.guaranaantarctica.com.br/"> <img width = "" src="https://www.guaranaantarctica.com.br/sites/g/files/wnfebl1571/files/Novo%20Projeto%20%2836%29.png" /> </a> &nbsp;&nbsp; <a href="https://www.guaranaantarctica.com.br/100anos/"> <img width = "150px" src="https://www.guaranaantarctica.com.br/sites/g/files/wnfebl1571/files/Guaran%C3%A1/Tempor%C3%A1rio/MicrosoftTeams-image%20%284%29.png" /> </a>
+   </h1>
 <br>
 
