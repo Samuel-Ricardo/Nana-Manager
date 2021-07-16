@@ -72,6 +72,82 @@ All routes have body and request validation, and return a Http Status referring 
    
    #
    
+ - Create Body Example
+   
+```json
+   
+   {
+	"name": "Guarana Antártica 200ml",
+	"type": "GUARANA",
+	
+	"nanaType": "GUARANA",
+	
+	"packing": {
+		"pack": "Garrafa",
+		"ml": 200
+	},
+	
+	"stock": 150,
+	
+	"stores":[
+		{
+			"name": "Big Bom Preço",
+			"price": 1.69
+		}
+	]
+}
+   
+```
+   
+- List All Nanás Response Example
+   
+   
+```json
+   
+[
+    {
+        "data": {
+            "id": 1,
+            "name": "Guarana Antártica 200ml",
+            "type": "GUARANA",
+            "nanaType": {
+                "type": "GUARANA",
+                "baseNutrients": {
+                    "carbohydrates": 0.1,
+                    "calories": 0.415,
+                    "sugars": 0.1,
+                    "sodium": 0.055,
+                    "ingredients": "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo.\n\nNão contém glúten."
+                }
+            },
+            "packing": {
+                "pack": "Garrafa",
+                "ml": 200
+            },
+            "stock": 150,
+            "stores": [
+                {
+                    "name": "Big Bom Preço",
+                    "price": 1.69
+                }
+            ],
+            "nutrients": {
+                "carbohydrates": 20,
+                "calories": 83,
+                "sugars": 20,
+                "sodium": 11,
+                "ingredients": "Água gaseificada, açúcar, extrato de guaraná, acidulante ácido cítrico, conservadores: benzoato de sódio e sorbato de potássio, aromatizante e corante caramelo.\n\nNão contém glúten."
+            }
+        },
+        "message": "The: Guarana Antártica 200ml Found :)",
+        "status": "FOUND"
+    }
+]
+   
+```
+   
+   #
+   
    <b>
    
   - Using SOLID more specifically the Single Responsibility Principle, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
