@@ -72,7 +72,7 @@ All routes have body and request validation, and return a Http Status referring 
    
    #
    
- - Create Body Example
+ - Create Body Example 
    
 ```json
    
@@ -91,7 +91,7 @@ All routes have body and request validation, and return a Http Status referring 
 	
 	"stores":[
 		{
-			"name": "Big Bom Preço",
+			"name": "Carrefour",
 			"price": 1.69
 		}
 	]
@@ -127,7 +127,7 @@ All routes have body and request validation, and return a Http Status referring 
             "stock": 150,
             "stores": [
                 {
-                    "name": "Big Bom Preço",
+                    "name": "Carrefour",
                     "price": 1.69
                 }
             ],
