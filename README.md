@@ -11,6 +11,7 @@
    |&nbsp;
   <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#techs">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#routes">Routes</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#run-project">Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="#author">Author</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
@@ -42,7 +43,9 @@ Naná or Guaguá is an affectionate way of naming the guarana soda.
    
  #
 
-##  :construction: API Routes: 
+   <p id="routes"/>
+   
+##  :construction: API Routes:  
 
  <h3><b> Base URL - /api/v1/nana-manager </b></h3>
 
