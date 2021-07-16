@@ -71,7 +71,7 @@ All routes have body and request validation, and return a Http Status referring 
    
    <b>
    
-  - Using SOLID more specifically the Single main responsibility, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
+  - Using SOLID more specifically the Single Responsibility Principle, the service layer was created to take care of the logic, while the controller is only responsible for controlling the routes, it was also created a documentation interface for the controller using Swagger.
 
   - The DTO was added one more layer in the Model (Entity), which validates the data, while the Entity is responsible for serving as a Model for the Database, with Mapper being responsible for being the intermediary between them, converting and mapping DTO for Entity and Entity for DTO.
 
