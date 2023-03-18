@@ -19,7 +19,7 @@
 #
    
  <h1 align="center">
-  <a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
+  <a href="https://www.linkedin.com/in/samuel-ricardo/">
     <img alt="Linkedin" src="https://img.shields.io/badge/LinkedIn-1781EB?style=for-the-badge&logo=linkedin&logoColor=fff&labelColor=1781EB)%5D">
   </a>
       
@@ -317,7 +317,7 @@ Mockito, hamcrest and JUnit were used for the tests
 
 <br>
 
-<a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
+<a href="https://www.linkedin.com/in/samuel-ricardo/">
 
   <img width="250px" src="https://github.com/Samuel-Ricardo/RocketPay/blob/master/readmefile/github.jpg"/>
 
@@ -329,7 +329,7 @@ Mockito, hamcrest and JUnit were used for the tests
 
 <h1 align="rigth">
   
-<a href="https://www.linkedin.com/in/samuel-ricardo-cabral/">
+<a href="https://www.linkedin.com/in/samuel-ricardo/">
   
   <img width = "115px" src="https://img.shields.io/badge/Linkedin-1781EB?color=black&style=for-the-badge&logo=LinkedIn&logoColor=blue" /> 
   
